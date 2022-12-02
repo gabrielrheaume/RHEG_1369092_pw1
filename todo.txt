@@ -1,0 +1,9 @@
+Back :
+ajouter session vérifier log in
+déconnexion
+
+Front :
+(JS) confirm window on delete (menu / categories)
+
+Optimisation :
+better display menu.form.php (modification et création très similaire)
