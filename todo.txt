@@ -1,5 +1,6 @@
 Back :
-do not display things
+ajouter un type de plat
+supprimer un type de plat
 Vérifier
 
 Front :

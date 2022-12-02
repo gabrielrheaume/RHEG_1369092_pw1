@@ -16,9 +16,11 @@
         /**
          * display chosen error message
          * 
+         * @param int $error_number the number associated with an error message
+         * 
          * @return void
          */
-        static function errorSwitch($error_number)
+        static function errorSwitch(int $error_number)
         {
             ?> <p class='error'> <?php
             switch($error_number)
@@ -29,7 +31,9 @@
         }
 
         /**
-         * display chosen error message
+         * display chosen success message
+         * 
+         * @param int $success_number the number associated with a success message
          * 
          * @return void
          */

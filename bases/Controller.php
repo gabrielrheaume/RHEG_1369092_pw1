@@ -5,6 +5,8 @@
 
         /**
          * Display error 404 if user goes in a non existant route
+         * 
+         * @return void
          */
         public function error404()
         {
@@ -15,6 +17,8 @@
          * redirect to the specified route
          * 
          * @param string $route
+         * 
+         * @return void
          */
         public function redirect(string $route)
         {
@@ -27,6 +31,8 @@
          * 
          * @param string $route route to use if the user is not supposed to be here
          * @param string $error_route route to use if there is an empty value
+         * 
+         * @return void
          */
         public function verifyPOST(string $route, string $error_route)
         {
@@ -41,6 +47,8 @@
          * Keep track of the last and current pages
          *
          * @param string $actual_page
+         * 
+         * @return void
          */
         protected function setSessionPages($actual_page)
         {
