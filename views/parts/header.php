@@ -16,6 +16,14 @@
         <a href="https://www.facebook.com/">Facebook</a>
         <a href="https://twitter.com/">Twitter</a>
         <a href="https://www.instagram.com/">Instagram</a>
+        <?php
+            if($_SESSION["user_id"] > 0)
+            {
+                ?>
+                    <a href="log-out">Déconnexion</a>
+                <?php
+            }
+        ?>
     </header>
     <?php
         Success::getMessage();

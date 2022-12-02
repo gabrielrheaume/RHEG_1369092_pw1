@@ -23,6 +23,7 @@
         "modify_meal_submit" => "modifyMeal",
         "add_category_submit" => "addNewCategory",
         "delete_category_of_meal_submit" => "deleteCategoryOfMeal",
+        "log-out" => "logOut",
     ];
 
 ?>

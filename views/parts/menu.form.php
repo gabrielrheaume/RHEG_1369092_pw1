@@ -1,4 +1,4 @@
-<!-- add meal -->
+<span>Ajouter un plat :</span>
 <form action="add_meal_submit" method="post" enctype="multipart/form-data">
     <span>Nom du plat :</span>
     <input type="text" name="name" placeholder="Salade Tonkinoise">
@@ -33,6 +33,7 @@
     <input type="submit" value="Soumettre">
 </form>
 
+<span>Modifier un plat :</span>
 <?php
     foreach($meals as $meal)
     {

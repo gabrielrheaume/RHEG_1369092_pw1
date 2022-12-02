@@ -93,7 +93,7 @@
          */
         public function displayAccountCreation()
         {
-            if(!$this->verifyAdmin()) $this->redirect("accueil");
+            if(!$this->verifyAdmin()) $this->redirect("index");
             $this->setSessionPages("creer-compte");
             $title = "Créer un compte";
             $display = "compte";
@@ -107,7 +107,7 @@
          */
         public function displayUpdateMenu()
         {
-            if(!$this->verifyUser()) $this->redirect("accueil");
+            if(!$this->verifyUser()) $this->redirect("index");
             $this->setSessionPages("modifier-menu");
             $title = "Modification du menu";
             $display = "menu";
@@ -123,7 +123,7 @@
          */
         public function displayUpdateCategories()
         {
-            if(!$this->verifyUser()) $this->redirect("accueil");
+            if(!$this->verifyUser()) $this->redirect("index");
             $this->setSessionPages("modifier-categorie");
             $title = "Modification des catégories";
             $display = "categorie";
@@ -139,7 +139,6 @@
          */
         public function displayFormPage($title, $display)
         {
-            if(!$this->verifyUser()) $this->redirect("accueil");
             // not enough datas to do queries only when it's used
             $categories["types"] = (new Types)->all();
             $categories["categories"] = (new Categories)->all();
@@ -370,17 +369,31 @@
          */
         public function verifyAdmin()
         {
-            
+            if(!$this->verifyUser()) return false;
+            if(!isset($_SESSION["admin"]) || $_SESSION["admin"] != true) return false;
+            return true;
         }
 
         /**
-         * Veirfy if the user is a connected user
+         * Verify if the user is a connected user
          *
          * @return bool true if the user is connected, false otherwise
          */
         public function verifyUser()
         {
-            
+            if(!isset($_SESSION["user_id"]) || $_SESSION["user_id"] == 0) return false;
+            return true;
+        }
+
+        /**
+         * Log out the user
+         *
+         * @return void
+         */
+        public function logOut()
+        {
+            $_SESSION["user_id"] = 0;
+            $this->redirect("index");
         }
     }
 

@@ -1,6 +1,6 @@
 Back :
-ajouter session vérifier log in
-déconnexion
+do not display things
+Vérifier
 
 Front :
 (JS) confirm window on delete (menu / categories)

@@ -57,7 +57,8 @@
             if(!$matching_password) return false;
 
             $_SESSION["user_id"] = $user["id"];
-
+            if($user["admin"]) $_SESSION["admin"] = true;
+            
             return true;
         }
     }
