@@ -8,9 +8,11 @@
     require_once("models/Types.php");
     require_once("models/Comments.php");
     require_once("models/Meals.php");
+    require_once("models/Meals_Categories.php");
 
     class SiteController extends Controller
     {
+        /********** View Display **********/
         /**
          * Display home page
          * 
@@ -58,6 +60,23 @@
             $this->setSessionPages("contact");
             $title = "Contact";
             include("views/contact.view.php");
+        }
+        
+        /********** Form Display **********/
+        /**
+         * Display forms' page with specified form
+         *
+         * @param string $title
+         * @param string $display name of the specified form
+         * @return void
+         */
+        public function displayFormPage($title, $display)
+        {
+            // not enough datas to do queries only when it's used
+            $categories["types"] = (new Types)->all();
+            $categories["categories"] = (new Categories)->all();
+            $meals = (new Meals)->getAllMealsAndCategories();
+            include("views/form.view.php");
         }
         
         /**
@@ -130,22 +149,9 @@
             $this->displayFormPage($title, $display);
         }
 
-        /**
-         * Display forms' page with specified form
-         *
-         * @param string $title
-         * @param string $display name of the specified form
-         * @return void
-         */
-        public function displayFormPage($title, $display)
-        {
-            // not enough datas to do queries only when it's used
-            $categories["types"] = (new Types)->all();
-            $categories["categories"] = (new Categories)->all();
-            $meals = (new Meals)->getAllMealsAndCategories();
-            include("views/form.view.php");
-        }
-
+        /********** Submit Form **********/
+        /***** General *****/
+        /***** Users *****/
         /**
          * Process informations to create an account
          *
@@ -188,6 +194,41 @@
         }
 
         /**
+         * Log out the user
+         *
+         * @return void
+         */
+        public function logOut()
+        {
+            $_SESSION["user_id"] = 0;
+            $this->redirect("index");
+        }
+
+        /**
+         * Verify if the user is a connected user
+         *
+         * @return bool true if the user is connected, false otherwise
+         */
+        public function verifyUser()
+        {
+            if(!isset($_SESSION["user_id"]) || $_SESSION["user_id"] == 0) return false;
+            return true;
+        }
+
+        /**
+         * Verify is the user is an admin
+         *
+         * @return bool true if the user is an admin, false otherwise
+         */
+        public function verifyAdmin()
+        {
+            if(!$this->verifyUser()) return false;
+            if(!isset($_SESSION["admin"]) || $_SESSION["admin"] != true) return false;
+            return true;
+        }
+        
+        /***** Newsletter *****/
+        /**
          * Process users email and name to add in Newsletter_info database
          *
          * @return void
@@ -209,6 +250,8 @@
             $this->redirect($_SESSION["last_page?success=1"]);
         }
 
+        /***** Types *****/
+        /***** Categories *****/
         /**
          * Process new categories and meal type to add into the databse
          *
@@ -226,7 +269,7 @@
             if($success) $this->redirect("modifier-menu?success=2");
             $this->redirect("modifier-menu?error=9");
         }
-
+        
         /**
          * Process modifications on a specifif category
          *
@@ -246,7 +289,7 @@
             if($success) $this->redirect("modifier-categories?success=3");
             $this->redirect("modifier-categories?error=8");
         }
-
+        
         /**
          * Process delete query of a category or type of meal
          *
@@ -266,6 +309,7 @@
             $this->redirect("modifier-categories?error=8");
         }
 
+        /***** Meals *****/
         /**
          * Process new meal to add it in the database
          *
@@ -290,13 +334,13 @@
             if($success) $this->redirect("menu?success=5");
             $this->redirect("modifier-menu?error=9");
         }
-
+        
         /**
          * Process delete query of a meal
          *
          * @return void
          */
-        public function deleteMeal() : bool
+        public function deleteMeal()
         {
             $this->verifyPOST("modifier-menu", "modifier-menu?error=1");
 
@@ -307,7 +351,7 @@
             if($success) $this->redirect("menu?success=6");
             $this->redirect("menu?error=9");
         }
-
+        
         /**
          * Process modifications query of a meal
          * 
@@ -330,6 +374,7 @@
             $this->redirect("modifier-menu?success=7");
         }
 
+        /***** Meals and Categories *****/
         /**
          * Process addition of a new category to a meal
          *
@@ -360,40 +405,6 @@
 
             if((new Meals)->deleteCategoryOfMeal($category_name, $meal_id)) $this->redirect("modifier-menu?success=9");
             $this->redirect("modifier-menu?error=9");
-        }
-
-        /**
-         * Verify is the user is an admin
-         *
-         * @return bool true if the user is an admin, false otherwise
-         */
-        public function verifyAdmin()
-        {
-            if(!$this->verifyUser()) return false;
-            if(!isset($_SESSION["admin"]) || $_SESSION["admin"] != true) return false;
-            return true;
-        }
-
-        /**
-         * Verify if the user is a connected user
-         *
-         * @return bool true if the user is connected, false otherwise
-         */
-        public function verifyUser()
-        {
-            if(!isset($_SESSION["user_id"]) || $_SESSION["user_id"] == 0) return false;
-            return true;
-        }
-
-        /**
-         * Log out the user
-         *
-         * @return void
-         */
-        public function logOut()
-        {
-            $_SESSION["user_id"] = 0;
-            $this->redirect("index");
         }
     }
 
