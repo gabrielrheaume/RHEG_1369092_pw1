@@ -3,25 +3,24 @@
     // Associative array that associate a route with a controller's method
     // Structure: "route's name" => "method's name"
     $routes = [
-        /***** view display *****/
+        /***** View Display *****/
         "index" => "displayHomepage",
         "menu" => "displayMenu",
         "a-propos" => "displayAboutUs",
         "contact" => "displayContact",
-        /***** form display *****/
+        /***** Form Display *****/
         "infolettre" => "displayNewsletterForm",
         "connexion" => "displayLogIn",
         "creer-compte" => "displayAccountCreation",
         "modifier-menu" => "displayUpdateMenu",
         "modifier-categories" => "displayUpdateCategories",
-        /***** Submit form *****/
+        /***** Submit Form *****/
         /* Users */
         "create_account_submit" => "createAccount",
         "log_in_submit" => "logIn",
         "log-out" => "logOut",
         /* Newsletter */
         "subscribe_newsletter_submit" => "subscribeNewsletter",
-        /* Types */
         /* Categories */
         "add_category_submit" => "addCategory",
         "modify_category_submit" => "modifyCategory",

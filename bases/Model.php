@@ -90,6 +90,25 @@
         }
 
         /**
+         * Return a model's element by name
+         *
+         * @param string $name
+         * @return int|false Associative array or false if error
+         */
+        public function byName(string $name)
+        {
+            $sql = "SELECT $this->table.id
+                    FROM $this->table
+                    WHERE $this->table.name = '$name'";
+            
+            $stmt = $this->pdo()->prepare($sql);
+            $stmt->execute();
+            $result = $stmt->fetch();
+            if(!$result) return false;
+            return $result["id"];
+        }
+
+        /**
          * Verify if an email is unique
          *
          * @param string $email

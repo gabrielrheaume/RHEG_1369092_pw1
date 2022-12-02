@@ -70,15 +70,15 @@
          * @param string $display name of the specified form
          * @return void
          */
-        public function displayFormPage($title, $display)
+        public function displayFormPage(string $title, string $display)
         {
             // not enough datas to do queries only when it's used
             $categories["types"] = (new Types)->all();
             $categories["categories"] = (new Categories)->all();
             $meals = (new Meals)->getAllMealsAndCategories();
+            if(!$meals) $this->redirect("menu");
             include("views/form.view.php");
         }
-        
         /**
          * Get informations to display the requested form
          * 
@@ -130,8 +130,8 @@
             $this->setSessionPages("modifier-menu");
             $title = "Modification du menu";
             $display = "menu";
-            // add query for categories and UNIQUE types
             $meals = (new Meals)->getAllMealsAndCategories();
+            if(!$meals) $this->redirect("menu");
             $this->displayFormPage($title, $display);
         }
 
@@ -150,7 +150,6 @@
         }
 
         /********** Submit Form **********/
-        /***** General *****/
         /***** Users *****/
         /**
          * Process informations to create an account
@@ -209,7 +208,7 @@
          *
          * @return bool true if the user is connected, false otherwise
          */
-        public function verifyUser()
+        public function verifyUser() : bool
         {
             if(!isset($_SESSION["user_id"]) || $_SESSION["user_id"] == 0) return false;
             return true;
@@ -220,7 +219,7 @@
          *
          * @return bool true if the user is an admin, false otherwise
          */
-        public function verifyAdmin()
+        public function verifyAdmin() : bool
         {
             if(!$this->verifyUser()) return false;
             if(!isset($_SESSION["admin"]) || $_SESSION["admin"] != true) return false;
@@ -242,15 +241,12 @@
 
             if(!$newsletter->verifyUniqueEmail($email)) $this->redirect("infolettre?error=3");
 
-            $name = $_POST["name"];
-
-            $success = $newsletter->subscribe($email, $name);
+            $success = $newsletter->subscribe($email, $_POST["name"]);
 
             if(!$success) $this->redirect("infolettre?error=5");
             $this->redirect($_SESSION["last_page?success=1"]);
         }
 
-        /***** Types *****/
         /***** Categories *****/
         /**
          * Process new categories and meal type to add into the databse
@@ -321,15 +317,9 @@
 
             $upload = new Upload("image", ["jpg", "jpeg", "png", "webp"]);
             if(!$upload->isValid()) $this->redirect("modifier-menu?error=10");
-
-            $name = $_POST["name"];
-            $type = $_POST["type"];
-            $category = $_POST["category"];
-            $description = $_POST["description"];
-            $price = $_POST["price"];
             $image_path = $upload->moveTo("public/uploads");
 
-            $success = (new Meals)->createMeal($name, $type, $category, $description, $price, $image_path);
+            $success = (new Meals)->createMeal($_POST["name"], $_POST["type"], $_POST["category"], $_POST["description"], $_POST["price"], $image_path);
 
             if($success) $this->redirect("menu?success=5");
             $this->redirect("modifier-menu?error=9");
@@ -344,9 +334,7 @@
         {
             $this->verifyPOST("modifier-menu", "modifier-menu?error=1");
 
-            $id = $_POST["id"];
-
-            $success = (new Meals)->delete($id);
+            $success = (new Meals)->delete($_POST["id"]);
 
             if($success) $this->redirect("menu?success=6");
             $this->redirect("menu?error=9");
@@ -361,14 +349,7 @@
         {
             $this->verifyPOST("modifier-menu","modifier-menu?error=1");
 
-            $name = $_POST["name"];
-            $description = $_POST["description"];
-            $type = $_POST["type"];
-            $category = $_POST["category"];
-            $price = $_POST["price"];
-            $id = $_POST["id"];
-
-            $success = (new Meals)->modifyMeal($name, $description, $type, $category, $price, $id);
+            $success = (new Meals)->modifyMeal($_POST["name"], $_POST["description"], $_POST["type"], $_POST["category"], $_POST["price"], $_POST["id"]);
 
             if(!$success) $this->redirect("modifier-menu?error=9");
             $this->redirect("modifier-menu?success=7");
@@ -384,10 +365,7 @@
         {
             $this->verifyPOST("modifier-menu", "modifier-menu?error=1");
 
-            $category_id = $_POST["category"];
-            $meal_id = $_POST["meal"];
-
-            if((new Meals)->addNewCategory($category_id, $meal_id)) $this->redirect("modifier-menu?success=8");
+            if((new Meals_Categories)->addNewCategory($_POST["category"], $_POST["meal"])) $this->redirect("modifier-menu?success=8");
             $this->redirect("modifier-menu?error=9");
         }
 
@@ -400,10 +378,7 @@
         {
             $this->verifyPOST("modifier-menu", "modifier-menu?error=1");
 
-            $category_name = $_POST["category_name"];
-            $meal_id = $_POST["meal_id"];
-
-            if((new Meals)->deleteCategoryOfMeal($category_name, $meal_id)) $this->redirect("modifier-menu?success=9");
+            if((new Meals_Categories)->deleteCategoryOfMeal($_POST["category_name"], $_POST["meal_id"])) $this->redirect("modifier-menu?success=9");
             $this->redirect("modifier-menu?error=9");
         }
     }

@@ -8,13 +8,13 @@
         protected $table = "newsletter_infos";  
         
         /**
-         * Add informations in Newsletter_infos to subscrire the newsletter
+         * Add informations in Newsletter_infos to subscrire to the newsletter
          *
          * @param string $email
          * @param string $name
-         * @return bool true if success, false otherwise
+         * @return bool true if successful, false otherwise
          */
-        public function subscribe($email, $name)
+        public function subscribe(string $email, string $name) : bool
         {
             $sql = "INSERT INTO $this->table (email, name)
                     VALUES (:email, :name)";

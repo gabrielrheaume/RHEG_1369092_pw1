@@ -13,9 +13,11 @@
         {
             if(isset($_GET["success"])) self::successSwitch($_GET["success"]);
         }
+
         /**
          * display chosen success message
          * 
+         * @param int $success_number number of the success' message to display
          * @return void
          */
         public static function successSwitch($success_number)

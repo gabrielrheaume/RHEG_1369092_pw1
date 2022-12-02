@@ -14,9 +14,9 @@
          * @param string $last_name
          * @param string $email
          * @param string $password
-         * @return void
+         * @return bool true if successful, false otherwise
          */
-        public function create(string $first_name, string $last_name, string $email, string $password)
+        public function create(string $first_name, string $last_name, string $email, string $password) : bool
         {
             $sql = "INSERT INTO $this->table (first_name, last_name, email, password)
                     VALUES (:first_name, :last_name, :email, :password)";
@@ -36,12 +36,12 @@
          *
          * @param string $email
          * @param string $password
-         * @return boolean
+         * @return bool
          */
-        public function log($email, $password) : bool
+        public function log(string $email, string $password) : bool
         {
             $sql = "SELECT *
-                    FROM users
+                    FROM $this->table
                     WHERE email = :email";
 
             $stmt = $this->pdo()->prepare($sql);

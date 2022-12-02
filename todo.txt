@@ -1,7 +1,8 @@
 Back :
-ajouter un type de plat
-supprimer un type de plat
-Vérifier
+Refactoring
+
+Avant Front :
+Entrer les données
 
 Front :
 (JS) confirm window on delete (menu / categories)

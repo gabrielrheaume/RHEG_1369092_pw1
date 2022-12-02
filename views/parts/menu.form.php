@@ -92,7 +92,7 @@
                         foreach($categories["categories"] as $category)
                         {
                             ?>
-                                <option value="<?= $category['id'] ?>" <?= (new Meals)->isCategoryAssociated($meal["id"], $category["id"])?>><?= $category["name"] ?></option>
+                                <option value="<?= $category['id'] ?>" <?= (new Meals_Categories)->isCategoryAssociated($meal["id"], $category["id"])?>><?= $category["name"] ?></option>
                             <?php
                         }
                     ?>
