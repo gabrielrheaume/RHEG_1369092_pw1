@@ -72,13 +72,34 @@
          */
         public function displayFormPage(string $title, string $display)
         {
+            include("views/form.view.php");
+        }
+        
+        /**
+         * Get informations in database and display the specified form
+         *
+         * @param string $display name of the form to display
+         * @return void
+         */
+        public function displayForm(string $display)
+        {
             // not enough datas to do queries only when it's used
             $categories["types"] = (new Types)->all();
             $categories["categories"] = (new Categories)->all();
             $meals = (new Meals)->getAllMealsAndCategories();
             if(!$meals) $this->redirect("menu");
-            include("views/form.view.php");
+
+            switch($display)
+            {
+                case "infolettre": include("views/parts/newsletter.form.php"); break;
+                case "connexion": include("views/parts/connection.form.php"); break;
+                case "compte": include("views/parts/createaccount.form.php"); break;
+                case "menu": include("views/parts/menu.form.php"); break;
+                case "categorie": include("views/parts/categories.form.php"); break;
+                default: Errors::errorSwitch(6);
+            }
         }
+
         /**
          * Get informations to display the requested form
          * 

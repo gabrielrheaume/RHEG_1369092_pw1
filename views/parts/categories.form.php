@@ -1,4 +1,3 @@
-<!-- lien ajout en bas avec vue SPA -->
 <form action="add_category_submit" method="post">
     <span>Ajouter une catégorie :</span>
     <input type="text" name="category" placeholder="Burger">
@@ -6,6 +5,7 @@
     <input type="text" name="type" placeholder="Dessert">
     <input type="submit" value="Soumettre">
 </form>
+
 <?php
     foreach($categories as $types_or_categories)
     {
@@ -17,11 +17,11 @@
                 <?php
                     if($type == "type")
                     {
-                        ?> Types de Plat : <?php
+                        ?> Modifier un Type de Plat : <?php
                     }
                     else
                     {
-                        ?> Catégories : <?php
+                        ?> Modifier une Catégorie : <?php
                     }
                 ?>
             </span>
@@ -34,6 +34,7 @@
                     <input type="hidden" name="type" value="<?= $type ?>">
                     <input type="submit" value="Soumettre">
                 </form>
+                
                 <form action="delete_category_submit" method="post">
                     <input type="hidden" name="id" value="<?= $category["id"] ?>">
                     <input type="hidden" name="type" value="<?= $type ?>">

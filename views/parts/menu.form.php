@@ -107,7 +107,5 @@
                 <input type="submit" value="🗑">
             </form>
         <?php
-
-        
     }
 ?>
