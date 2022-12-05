@@ -8,6 +8,25 @@
         protected $table = "categories";
 
         /**
+         * Return all results of model's table
+         *
+         * @return array|false Associative array or false if error
+         */
+        public function all()
+        {
+            $sql = "SELECT *
+                    FROM $this->table
+                    ORDER BY $this->table.name";
+
+            // Préparation de la requête            
+            $stmt = $this->pdo()->prepare($sql);
+
+            $stmt->execute();
+
+            return $stmt->fetchAll();
+        }
+        
+        /**
          * Insert new category into the database
          *
          * @param string $category name of the category
@@ -76,7 +95,8 @@
             FROM $this->table
             JOIN meals_categories
             ON categories.id = meals_categories.category_id
-            WHERE meals_categories.meal_id = $meal_id";
+            WHERE meals_categories.meal_id = $meal_id
+            ORDER BY $this->table.name";
 
             $stmt = $this->pdo()->prepare($sql);
 

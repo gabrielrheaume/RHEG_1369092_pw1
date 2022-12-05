@@ -17,11 +17,14 @@
         <a href="https://twitter.com/">Twitter</a>
         <a href="https://www.instagram.com/">Instagram</a>
         <?php
-            if($_SESSION["user_id"] > 0)
+            if(isset($_SESSION["user_id"]))
             {
-                ?>
-                    <a href="log-out">Déconnexion</a>
-                <?php
+                if($_SESSION["user_id"] > 0)
+                {
+                    ?>
+                        <a href="log-out">Déconnexion</a>
+                    <?php
+                }
             }
         ?>
     </header>

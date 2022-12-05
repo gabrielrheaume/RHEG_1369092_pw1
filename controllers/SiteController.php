@@ -87,7 +87,7 @@
             $categories["types"] = (new Types)->all();
             $categories["categories"] = (new Categories)->all();
             $meals = (new Meals)->getAllMealsAndCategories();
-            if(!$meals) $this->redirect("menu");
+            if(!$meals) $meals = false;
 
             switch($display)
             {
@@ -151,8 +151,6 @@
             $this->setSessionPages("modifier-menu");
             $title = "Modification du menu";
             $display = "menu";
-            $meals = (new Meals)->getAllMealsAndCategories();
-            if(!$meals) $this->redirect("menu");
             $this->displayFormPage($title, $display);
         }
 
@@ -342,7 +340,7 @@
 
             $success = (new Meals)->createMeal($_POST["name"], $_POST["type"], $_POST["category"], $_POST["description"], $_POST["price"], $image_path);
 
-            if($success) $this->redirect("menu?success=5");
+            if($success) $this->redirect("modifier-menu?success=5");
             $this->redirect("modifier-menu?error=9");
         }
         
