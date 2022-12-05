@@ -61,6 +61,25 @@
             $title = "Contact";
             include("views/contact.view.php");
         }
+
+        /**
+         * Detrmine if the restaurant is open or not
+         *
+         * @return boolean true if open, false otherwise
+         */
+        public function isOpen()
+        {
+            date_default_timezone_set('America/New_York');
+            if(date('D') == "Sat" || date('D') == "Sun")
+            {
+                if(date('H') < 2 || date('H') > 11) return true;
+            }
+            else
+            {
+                if(date('H') < 1 || date('H') > 11) return true;
+            }
+            return false;
+        }
         
         /********** Form Display **********/
         /**

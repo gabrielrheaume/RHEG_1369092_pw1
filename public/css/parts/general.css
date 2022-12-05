@@ -1,0 +1,57 @@
+body
+{
+    background-color: #333;
+    color: white;
+    position: relative;
+    font-family: 'GFS Didot';
+}
+
+a
+{
+    color: white;
+}
+
+.right
+{
+    position: absolute;
+    top: 3px;
+    right: 3px;
+}
+
+.form
+{
+    padding: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form .submit
+{
+    width: 100px;
+}
+
+img
+{
+    max-width: 400px;
+    max-height: 400px;
+}
+
+.bloc_error,
+.bloc_success
+{
+    display: flex;
+    justify-content: center;
+}
+
+.error
+{
+    border: 1px solid red;
+    color: red;
+}
+
+.success
+{
+    border: 1px solid green;
+    color: green;
+}
