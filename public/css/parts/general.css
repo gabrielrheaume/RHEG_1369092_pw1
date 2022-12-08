@@ -1,57 +1,18 @@
-body
-{
-    background-color: #333;
-    color: white;
-    position: relative;
-    font-family: 'GFS Didot';
+body {
+  margin: 0;
+  font-family: linotype-didot-headline, serif;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
 }
 
-a
-{
-    color: white;
+a {
+  font-family: linotype-didot-headline, serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #FC3833;
 }
 
-.right
-{
-    position: absolute;
-    top: 3px;
-    right: 3px;
-}
-
-.form
-{
-    padding: 20vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.form .submit
-{
-    width: 100px;
-}
-
-img
-{
-    max-width: 400px;
-    max-height: 400px;
-}
-
-.bloc_error,
-.bloc_success
-{
-    display: flex;
-    justify-content: center;
-}
-
-.error
-{
-    border: 1px solid red;
-    color: red;
-}
-
-.success
-{
-    border: 1px solid green;
-    color: green;
-}
+a:hover {
+  text-decoration: none;
+}/*# sourceMappingURL=general.css.map */
