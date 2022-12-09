@@ -1,4 +1,182 @@
+/* HEADING IMAGE */
 
+.heading
+{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img
+    {
+        width: 100%;
+        max-height: 100vh;
+    }
+
+    .text-area
+    {
+        width: 60%;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+    
+        h1
+        {
+            font-size: 60px;
+            font-weight: 400;
+            margin-bottom: 5px;
+        }
+    
+        .slogan
+        {
+            font-size: 35px;
+            font-weight: 400;
+            margin: 0;
+        }
+    
+        .text
+        {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            p
+            {
+                font-family: "font-family: roboto, sans-serif";
+                font-weight: 400;
+                font-style: normal;
+                font-size: 30px;
+            }
+        }
+    }
+}
+
+/* TRY US SECTION */
+.try-us
+{
+    width: 100%;
+    height: 700px;
+    color: white;
+    background: radial-gradient(ellipse at 50%, #7A0C0A, #2D2F30 80%);
+    display: flex;
+    flex-direction: row;
+    margin: 50px 0 100px 0;
+
+    .bloc-texte
+    {
+        width: 40%;
+        box-sizing: border-box;
+        padding: 5% 5%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-self: center;
+
+        h2
+        {
+            font-size: 35px;
+            margin: 15px 0;
+        }
+
+        p
+        {
+            display: flex;
+            box-sizing: border-box;
+            line-height: 30px;
+            font-size: 16px;
+            font-family: "font-family: roboto, sans-serif";
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        a
+        {
+            font-size: 20px;
+        }
+    }
+
+    .images
+    {
+        width: 60%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2%;
+
+        div
+        {
+            width: 49%;
+            height: 49%;
+        }
+
+        .img1
+        {
+            background: rgba(255, 255, 255, 0) center/cover url("../../images/potage_du_moment.jpg") no-repeat;
+        }
+
+        .img2
+        {
+            background: rgba(255, 255, 255, 0) center/cover url("../../images/burger.jpg") no-repeat;
+        }
+
+        .img3
+        {
+            background: rgba(255, 255, 255, 0) center/cover url("../../images/brownie.jpg") no-repeat;
+        }
+
+        .img4
+        {
+            background: rgba(255, 255, 255, 0) center/cover url("../../images/salade_du_jour.jpg") no-repeat;
+        }
+    }
+}
+
+@media screen and (max-width: 1041px)
+{
+    .try-us
+    {
+        
+        .bloc-texte
+        {
+            width: 75%;
+        }
+
+        .images
+        {
+            flex-direction: column;
+            align-items: flex-end;
+            width: 100%;
+
+            div
+            {
+                width: 100%;
+            }
+
+            .img1,
+            .img3
+            {
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 880px)
+{
+    .try-us
+    {
+        .bloc-texte
+        {
+            padding: 0 15%;
+            width: 100%;
+        }
+
+        .images
+        {
+            display: none;
+        }
+    }
+}
 
 /* EXPERIENCE SECTION */
 .experience
@@ -12,6 +190,7 @@
     {
         display: flex;
         align-items: center;
+        width: 100%;
 
         img
         {
