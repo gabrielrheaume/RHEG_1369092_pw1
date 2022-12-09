@@ -2,3 +2,5 @@ Front :
 (JS) confirm window on delete (menu / categories)
 
 pourquoi ctrl+f5 fait parfois disparaître mes images expérience?
+
+RESPONSIVE heading_image homepage
