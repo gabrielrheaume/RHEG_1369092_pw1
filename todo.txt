@@ -1,11 +1,4 @@
-Back :
-Refactoring
-
-Avant Front :
-Entrer les données
-
 Front :
 (JS) confirm window on delete (menu / categories)
 
-Optimisation :
-better display menu.form.php (modification et création très similaire)
+pourquoi ctrl+f5 fait parfois disparaître mes images expérience?
