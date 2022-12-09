@@ -1,44 +1,296 @@
-.left,
-.right
+.site-container-contact
 {
+    margin: 0 10%;
+    display: flex;
+
+    .left,
+    .right
+    {
+        width: 50%;
+        height: 75vh;
+        margin: 25px 0 50px 0;
+    }
+    
+    .left
+    {
+        color: #2D2F30;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        h1,
+        h2
+        {
+            margin: 0;
+            font-family: "linotype-didot-headline, serif";
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        h1
+        {
+            align-self: center;
+            font-size: 60px;
+        }
+    
+        h2
+        {
+            align-self: flex-start;
+            font-size: 30px;
+        }
+
+        p
+        {
+            align-self: flex-start;
+            font-size: 20px;
+            font-family: "font-family: roboto, sans-serif";
+            font-weight: 400;
+            font-style: normal;
+        }
+    
+        .business-hours
+        {
+            .openclose
+            {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                .circle
+                {
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 100%;
+                }
+
+                div.open
+                {
+                    background-color: #00FF19;
+                }
+
+                div.close
+                {
+                    background-color: #FF0000;
+                }
+        
+                p.open
+                {
+                    color: #00FF19;
+                }
+    
+                p.close
+                {
+                    color: #FF0000;
+                }
+            }
+
+            .days
+            {
+                display: flex;
+                align-items: space-evenly;
+
+                .days-left,
+                .days-right
+                {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                    width: 50%;
+                }
+
+                .days-right
+                {
+                    margin: 31.5px 0;
+                }
+            }
+        }
+    }
+    
+    .right
+    {
+        iframe
+        {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 1100px)
+{
+    .site-container-contact
+    {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .left,
+        .right
+        {
+            width: 80%;
+        }
+
+        .left
+        {
+            h2
+            {
+                display: flex;
+                justify-content: center;
+            }
+
+            .address
+            {
+                margin-top: 30px;
+
+                p
+                {
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+
+            .business-hours
+            {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                h2
+                {
+                    align-self: center;
+                }
+
+                .days
+                {
+                    width: 100%;
+
+                    .days-left,
+                    .days-right
+                    {
+                        p
+                        {
+                            align-self: center;
+                        }
+                    }
+                }
+            }
+
+            .phone
+            {
+                margin-top: 30px;
+                p
+                {
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 700px)
+{
+    .site-container-contact
+    {
+        .left,
+        .right
+        {
+            width: 90%;
+        }
+
+        .left
+        {
+            p
+            {
+                margin: 15px;
+            }
+
+            .address
+            {
+                p
+                {
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+
+            .business-hours
+            {
+
+                .days
+                {
+                    flex-direction: column;
+                    align-items: center;
+        
+                    p
+                    {
+                        margin: 5px;
+                    }
+
+                    .days-right
+                    {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+
 
 }
 
-.left
+@media screen and (max-width: 615px)
 {
-    h1
+    .site-container-contact
     {
-
-    }
-
-    h2
-    {
-
-    }
-
-    .business-hours
-    {
-        .circle
+        .left
         {
-
-        }
-
-        .openclose
-        {
-
-        }
-
-        .flex-end
-        {
-
+            p
+            {
+                font-size: 19px;
+            }
         }
     }
 }
 
-.right
+@media screen and (max-width: 586px)
 {
-    iframe
+    .site-container-contact
     {
+        .left
+        {
+            p
+            {
+                font-size: 18px;
+            }
+        }
+    }
+}
 
+@media screen and (max-width: 556px)
+{
+    .site-container-contact
+    {
+        .left
+        {
+            p
+            {
+                font-size: 17px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 527px)
+{
+    .site-container-contact
+    {
+        .left
+        {
+            p
+            {
+                font-size: 16px;
+            }
+        }
     }
 }

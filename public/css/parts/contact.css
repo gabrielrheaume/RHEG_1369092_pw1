@@ -1,1 +1,166 @@
-/*# sourceMappingURL=contact.css.map */
+.site-container-contact {
+  margin: 0 10%;
+  display: flex;
+}
+.site-container-contact .left,
+.site-container-contact .right {
+  width: 50%;
+  height: 75vh;
+  margin: 25px 0 50px 0;
+}
+.site-container-contact .left {
+  color: #2D2F30;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.site-container-contact .left h1,
+.site-container-contact .left h2 {
+  margin: 0;
+  font-family: "linotype-didot-headline, serif";
+  font-weight: 400;
+  font-style: normal;
+}
+.site-container-contact .left h1 {
+  align-self: center;
+  font-size: 60px;
+}
+.site-container-contact .left h2 {
+  align-self: flex-start;
+  font-size: 30px;
+}
+.site-container-contact .left p {
+  align-self: flex-start;
+  font-size: 20px;
+  font-family: "font-family: roboto, sans-serif";
+  font-weight: 400;
+  font-style: normal;
+}
+.site-container-contact .left .business-hours .openclose {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.site-container-contact .left .business-hours .openclose .circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+}
+.site-container-contact .left .business-hours .openclose div.open {
+  background-color: #00FF19;
+}
+.site-container-contact .left .business-hours .openclose div.close {
+  background-color: #FF0000;
+}
+.site-container-contact .left .business-hours .openclose p.open {
+  color: #00FF19;
+}
+.site-container-contact .left .business-hours .openclose p.close {
+  color: #FF0000;
+}
+.site-container-contact .left .business-hours .days {
+  display: flex;
+  align-items: space-evenly;
+}
+.site-container-contact .left .business-hours .days .days-left,
+.site-container-contact .left .business-hours .days .days-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 50%;
+}
+.site-container-contact .left .business-hours .days .days-right {
+  margin: 31.5px 0;
+}
+.site-container-contact .right iframe {
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 1100px) {
+  .site-container-contact {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .site-container-contact .left,
+.site-container-contact .right {
+    width: 80%;
+  }
+  .site-container-contact .left h2 {
+    display: flex;
+    justify-content: center;
+  }
+  .site-container-contact .left .address {
+    margin-top: 30px;
+  }
+  .site-container-contact .left .address p {
+    display: flex;
+    justify-content: center;
+  }
+  .site-container-contact .left .business-hours {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .site-container-contact .left .business-hours h2 {
+    align-self: center;
+  }
+  .site-container-contact .left .business-hours .days {
+    width: 100%;
+  }
+  .site-container-contact .left .business-hours .days .days-left p,
+.site-container-contact .left .business-hours .days .days-right p {
+    align-self: center;
+  }
+  .site-container-contact .left .phone {
+    margin-top: 30px;
+  }
+  .site-container-contact .left .phone p {
+    display: flex;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 700px) {
+  .site-container-contact .left,
+.site-container-contact .right {
+    width: 90%;
+  }
+  .site-container-contact .left p {
+    margin: 15px;
+  }
+  .site-container-contact .left .address p {
+    display: flex;
+    justify-content: center;
+  }
+  .site-container-contact .left .business-hours .days {
+    flex-direction: column;
+    align-items: center;
+  }
+  .site-container-contact .left .business-hours .days p {
+    margin: 5px;
+  }
+  .site-container-contact .left .business-hours .days .days-right {
+    margin: 0;
+  }
+}
+@media screen and (max-width: 615px) {
+  .site-container-contact .left p {
+    font-size: 19px;
+  }
+}
+@media screen and (max-width: 586px) {
+  .site-container-contact .left p {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 556px) {
+  .site-container-contact .left p {
+    font-size: 17px;
+  }
+}
+@media screen and (max-width: 527px) {
+  .site-container-contact .left p {
+    font-size: 16px;
+  }
+}/*# sourceMappingURL=contact.css.map */
