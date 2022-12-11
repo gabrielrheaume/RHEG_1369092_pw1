@@ -5,7 +5,7 @@ fetch("utils/comments.json").then(reply => reply.json()).then(data => {
     comments = data
 })
 
-setInterval(comment, 500) // à changer
+setInterval(comment, 5500) // à changer
 
 function comment()
 {
@@ -53,6 +53,8 @@ function comment()
         else actual_time += date.getMinutes()
         time.textContent = actual_time
         div.appendChild(time)
+        
+        setTimeout(deleteComment, 5000, div)
     
         div.addEventListener('click', (e) => {
             document.querySelector('.comment').remove()
@@ -83,4 +85,9 @@ function getStarsRating(rating)
     }
 
     return value
+}
+
+function deleteComment(comment)
+{
+    comment.remove()
 }
