@@ -1,0 +1,7 @@
+/* This is in another css because it was put after every import with SCSS and this need to be before */
+/* This font is used ONLY to get that left half star for the comments ! */
+@font-face {
+    font-family: 'BabelStone';
+    src: url("../fonts/BabelStoneShapes.woff") format("woff"),
+         url("../fonts/BabelStoneShapes.woff2") format("woff2");
+  }

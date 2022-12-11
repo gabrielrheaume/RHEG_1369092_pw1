@@ -22,7 +22,12 @@
         {
             $this->setSessionPages("index");
             $title = "Homepage";
-            $comments = (new Comments)->all();
+            /* create a json file with all comments to manipulate with JS */
+            $comments = json_encode((new Comments)->all());
+            $file = fopen('utils/comments.json', 'w');
+            fwrite($file, $comments);
+            fclose($file);
+
             include("views/homepage.view.php");
         }
 

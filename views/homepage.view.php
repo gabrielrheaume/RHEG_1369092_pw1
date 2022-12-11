@@ -7,10 +7,6 @@
     Success::getMessage();
 ?>
 
-<?php
-    //$comments
-?>
-
 <!-- Heading Image -->
 <div class="heading-image">
     <div class="text-area">
@@ -54,6 +50,7 @@
 </section>
 
 <script src="public/js/experience.js"></script>
+<script src="public/js/comments.js" charset='utf-8'></script>
 
 <?php
     include("parts/footer.php");

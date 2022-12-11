@@ -1,0 +1,25 @@
+.stars
+{
+    font-family: 'BabelStone';
+    color: yellow;
+}
+
+.comment
+{
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    position: absolute;
+    top: 500px;
+    left: 50vw;
+}
+
+.comment.left
+{
+    left: 0;
+}
+
+.comment.right
+{
+    right: 0;
+}

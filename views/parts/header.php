@@ -5,7 +5,9 @@
     <meta http-equiv=M'X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title><?= $title ?></title>
+    
     <link rel="stylesheet" href="https://use.typekit.net/dfq0qcq.css">
+    <link rel='stylesheet' href='public/css/font.css'>
     <link rel='stylesheet' href='public/css/style.css'>
 </head>
 <body>
