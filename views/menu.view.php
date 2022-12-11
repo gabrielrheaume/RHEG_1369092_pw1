@@ -1,6 +1,13 @@
 <?php
     include("parts/header.php");
 ?>
+    
+<div class="header-size"></div>
+
+<?php
+    Errors::getMessage();
+    Success::getMessage();
+?>
 
 <?php
     if($this->verifyAdmin())

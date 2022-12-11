@@ -312,7 +312,6 @@
         public function modifyCategory()
         {
             $this->verifyPOST("modifier-categories", "modifier-categories?error=1");
-
             $type = $_POST["type"];
             $id = $_POST["id"];
             $name = $_POST["name"];

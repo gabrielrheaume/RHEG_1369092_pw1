@@ -2,6 +2,13 @@
     include("parts/header.php");
 ?>
 
+<div class="header-size"></div>
+
+<?php
+    Errors::getMessage();
+    Success::getMessage();
+?>
+
 <div class="site-container-aboutus">
     <section class="left">
         <h2>À Propos</h2>

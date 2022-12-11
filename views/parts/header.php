@@ -36,6 +36,3 @@
             ?>
         </div>
     </header>
-    <?php
-        Success::getMessage();
-    ?>

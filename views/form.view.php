@@ -2,9 +2,11 @@
     include("parts/header.php");
 ?>
 
+<div class="header-size"></div>
+
 <?php
-    // mettre dans une fonction ???
     Errors::getMessage();
+    Success::getMessage();
     $this->displayForm($display);
 ?>
 

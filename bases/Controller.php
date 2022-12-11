@@ -52,8 +52,11 @@
          */
         protected function setSessionPages($actual_page)
         {
-            $_SESSION["last_page"] = $_SESSION["actual_page"];
-            $_SESSION["actual_page"] = $actual_page;
+            if(isset($_SESSION) && $_SESSION["actual_page"] != $actual_page)
+            {
+                if(isset($_SESSION["actual_page"])) $_SESSION["last_page"] = $_SESSION["actual_page"];
+                $_SESSION["actual_page"] = $actual_page;
+            }
         }
     }
 

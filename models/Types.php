@@ -2,7 +2,7 @@
     
     require_once("bases/Model.php");
 
-    class Types extends Categories
+    class Types extends Model
     {
         // Model has to specify his table
         protected $table = "types";

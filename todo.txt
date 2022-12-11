@@ -1,6 +1,17 @@
+Back :
+Pouvoir changre l'image des plats
+
 Front :
+Page menu
+Page Form
+    newletter
+    categories
+    connexion
+    créer compte
+    menu
+Commentaires page d'accueil
 (JS) confirm window on delete (menu / categories)
 
-pourquoi ctrl+f5 fait parfois disparaître mes images expérience?
-
-RESPONSIVE heading_image homepage
+QUESTIONS
+pourquoi ctrl+f5 fait parfois disparaître mes images expérience ?
+est-ce une bonne pratique de créer un div invisible qui prend l'espace du header ?

@@ -1,0 +1,77 @@
+.experience {
+  background-color: #DDDDDD;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.experience .exp-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.experience .exp-container img {
+  width: 100%;
+}
+.experience .bloc-texte {
+  margin: 50px auto 0 auto;
+  position: absolute;
+  width: 40%;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  z-index: 100;
+}
+.experience .bloc-texte h2,
+.experience .bloc-texte p {
+  margin: 0 15%;
+  display: flex;
+}
+.experience .bloc-texte h2 {
+  color: #2D2F30;
+  opacity: 100%;
+  height: 30%;
+  font-size: 30px;
+  display: flex;
+  align-items: flex-end;
+}
+.experience .bloc-texte p {
+  display: flex;
+  box-sizing: border-box;
+  line-height: 35px;
+  padding: 25px;
+  height: 60%;
+  color: #2D2F30;
+  font-size: 18px;
+  font-family: "font-family: roboto, sans-serif";
+  font-weight: 400;
+  font-style: normal;
+}
+
+@media screen and (max-width: 892px) {
+  .experience .bloc-texte {
+    width: 50%;
+  }
+  .experience .bloc-texte h2,
+.experience .bloc-texte p {
+    margin: 0 10%;
+  }
+  .experience .bloc-texte h2 {
+    height: 20%;
+  }
+  .experience .bloc-texte p {
+    height: 70%;
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 750px) {
+  .experience .bloc-texte {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 625px) {
+  .experience .bloc-texte {
+    width: 75%;
+  }
+}/*# sourceMappingURL=homepage_experience.css.map */

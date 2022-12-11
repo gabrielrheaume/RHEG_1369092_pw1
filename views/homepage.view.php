@@ -3,22 +3,24 @@
 ?>
 
 <?php
+    Errors::getMessage();
+    Success::getMessage();
+?>
+
+<?php
     //$comments
 ?>
 
 <!-- Heading Image -->
-<section class="heading">
-    <img src="public/images/calamar.jpg" alt="Présentation d'une longue assiette de calamar avec un petit pot de sauce rouge où des céleris se baignent." srcset="">
+<div class="heading-image">
     <div class="text-area">
-        <div class="titles">
-            <h1>PUB G4</h1>
-            <h4 class="slogan">Si réel, mais <br>pourtant surréaliste<br></h4>
-        </div>
-        <div class="text">
+        <h1>PUB G4</h1>
+        <h4 class="slogan">Si réel, mais <br>pourtant surréaliste<br></h4>
+        <div class="paragraph">
             <p>Des plats succulents et variés vous attendent !</p>
         </div>
     </div>
-</section>
+</div>
 
 <!-- Try Us Section -->
 <section class="try-us">

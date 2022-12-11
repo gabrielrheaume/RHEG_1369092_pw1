@@ -1,6 +1,14 @@
 <?php
     include("parts/header.php");
 ?>
+    
+<div class="header-size"></div>
+
+<?php
+    Errors::getMessage();
+    Success::getMessage();
+?>
+
 <div class="site-container-contact">
     <section class="left">
         <h1>PUB G4</h1>

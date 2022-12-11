@@ -1,0 +1,150 @@
+.heading-image
+{
+    width: 100%;
+    height: 100vh;
+    background-image: url("../../images/calamar.jpg");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    .text-area
+    {
+        width: 50%;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+
+        h1
+        {
+            font-size: 50px;
+            margin: 0;
+        }
+
+        h4
+        {
+            font-size: 33px;
+            margin: 0;
+        }
+
+        .paragraph
+        {
+            display: flex;
+            justify-content: center;
+            flex-grow: 1;
+
+            p
+            {
+                display: flex;
+                align-items: flex-end;
+                font-family: "font-family: roboto, sans-serif";
+                font-weight: 400;
+                font-style: normal;
+                font-size: 30px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1425px)
+{
+    .heading-image
+    {
+        .text-area
+        {
+            height: 75%;
+        }
+    }
+}
+
+@media screen and (max-width: 1250px)
+{
+    .heading-image
+    {
+        .text-area
+        {
+            height: 70%;
+        }
+    }
+}
+
+@media screen and (max-width: 1150px)
+{
+    .heading-image
+    {
+        .text-area
+        {
+            width: 55%;
+        }
+    }
+}
+
+@media screen and (max-width: 950px)
+{
+    .heading-image
+    {
+        .text-area
+        {
+            width: 60%;
+        }
+    }
+}
+
+@media screen and (max-width: 875px)
+{
+    .heading-image
+    {
+        .text-area
+        {
+            width: 65%;
+
+            .paragraph
+            {
+                p
+                {
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 800px)
+{
+    .heading-image
+    {
+        .text-area
+        {
+            width: 70%;
+        }
+    }
+}
+
+@media screen and (max-width: 650px)
+{
+    .heading-image
+    {
+        .text-area
+        {
+            width: 80%;
+        }
+    }
+}
+
+@media screen and (max-width: 574px)
+{
+    .heading-image
+    {
+        .text-area
+        {
+            .paragraph
+            {
+                p
+                {
+                    font-size: 21px;
+                }
+            }
+        }
+    }
+}
