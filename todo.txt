@@ -1,5 +1,4 @@
 Back :
-Pouvoir changre l'image des plats
 
 Front :
 Page menu

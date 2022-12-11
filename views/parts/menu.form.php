@@ -41,11 +41,11 @@
         {
             ?>
                 <!-- modify meal -->
-                <form action="modify_meal_submit" method="post">
+                <form action="modify_meal_submit" method="post" enctype="multipart/form-data">
                     <span>Nom du plat :</span>
-                    <input type="text" name="name" value="<?= $meal['name'] ?>">
+                    <input type="text" name="name" value="<?= $meal['name'] ?>" required>
                     <span>Description :</span>
-                    <input type="textarea" name="description" value="<?= $meal['description'] ?>">
+                    <input type="textarea" name="description" value="<?= $meal['description'] ?>" required>
                     <select name="type">
                         <?php
                             foreach($categories["types"] as $type)
@@ -77,8 +77,9 @@
                     }
                     ?>
                     <span>Prix :</span>
-                    <input type="number" name="price" value="<?= $meal['price'] ?>" step=".01">
+                    <input type="number" name="price" value="<?= $meal['price'] ?>" step=".01" required>
                     <input type="hidden" name="id" value="<?= $meal['id'] ?>">
+                    <input type="file" name="image">
                     <input type="submit" value="Soumettre">
                 </form>
     

@@ -106,7 +106,7 @@
             $categories["types"] = (new Types)->all();
             $categories["categories"] = (new Categories)->all();
             $meals = (new Meals)->getAllMealsAndCategories();
-            if(!$meals) $meals = false;
+            if(!$meals) $meals = false; // if there is no meal, meals is an empty array
 
             switch($display)
             {
@@ -384,7 +384,17 @@
          */
         public function modifyMeal()
         {
-            $this->verifyPOST("modifier-menu","modifier-menu?error=1");
+            if(empty($_POST)) $this->redirect("modifier-menu");
+            if(empty($_POST["name"]) ||empty($_POST["description"]) ||empty($_POST["type"]) ||empty($_POST["category"]) ||empty($_POST["price"]) ||empty($_POST["id"]))  $this->redirect("modifier-menu?error=1");
+
+            $upload = new Upload("image", ["jpg", "jpeg", "png", "webp"]);
+            if($upload->isValid())
+            {
+                $image_path = $upload->moveTo("public/uploads");
+
+                $success = (new Meals)->modifyMealPicture($image_path, $_POST["id"]);
+                if(!$success) $this->redirect("modifier-menu?error=9");
+            }
 
             $success = (new Meals)->modifyMeal($_POST["name"], $_POST["description"], $_POST["type"], $_POST["category"], $_POST["price"], $_POST["id"]);
 

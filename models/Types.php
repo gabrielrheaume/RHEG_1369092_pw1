@@ -6,6 +6,63 @@
     {
         // Model has to specify his table
         protected $table = "types";
+        
+        /**
+         * Insert new category into the database
+         *
+         * @param string $category name of the category
+         * 
+         * @return bool true if successful, false otherwise
+         */
+        public function insert(string $category) : bool
+        {
+            $sql = "INSERT INTO $this->table (name)
+                    VALUES (:category)";
+
+            $stmt = $this->pdo()->prepare($sql);
+    
+            return $stmt->execute([
+                ":category" => $category
+            ]);
+        }
+
+        /**
+         * Edit the name in the database
+         *
+         * @param int $id
+         * @param string $name
+         * 
+         * @return bool true if successful, false otherwise
+         */
+        public function edit(int $id, string $name) : bool
+        {
+            $sql = "UPDATE $this->table
+                    SET name = :name
+                    WHERE id = $id";
+            
+            $stmt = $this->pdo()->prepare($sql);
+
+            return $stmt->execute([
+                ":name" => $name
+            ]);
+        }
+
+        /**
+         * Delete an item in the database
+         *
+         * @param int $id
+         * 
+         * @return bool
+         */
+        public function delete(int $id) : bool
+        {
+            $sql = "DELETE FROM $this->table
+                    WHERE id = $id";
+                
+            $stmt = $this->pdo()->prepare($sql);
+
+            return $stmt->execute();
+        }
 
         /**
          * Get the type of a meal

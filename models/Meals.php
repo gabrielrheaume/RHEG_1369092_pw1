@@ -153,6 +153,15 @@
 
             return (new Meals_Categories)->modifyLink($category_id, $id);
         }
+
+        public function modifyMealPicture($image_path, $id)
+        {
+            $sql = "UPDATE $this->table
+                    SET image = '$image_path'
+                    WHERE id = $id";
+
+            return $this->pdo()->prepare($sql)->execute();
+        }
         
         /**
          * Verify if the meal type or category is selected and echo "selected" if it is

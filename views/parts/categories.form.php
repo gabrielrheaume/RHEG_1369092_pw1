@@ -30,8 +30,8 @@
                         ?>
                     </span>
                     <input type="text" name="name" value="<?= $category["name"] ?>" required>
-                    <input type="hidden" name="id" value="<?= $category["id"] ?>">
-                    <input type="hidden" name="type" value="<?= $type ?>">
+                    <input type="hidden" name="id" value="<?= $category["id"] ?>" required>
+                    <input type="hidden" name="type" value="<?= $type ?>" required>
                     <input type="submit" value="Soumettre">
                 </form>
                 
