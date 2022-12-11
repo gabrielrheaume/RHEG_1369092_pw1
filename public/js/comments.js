@@ -1,42 +1,63 @@
 let comments = []
-let comments_to_pick = []
+let comments_to_pick = comments
 
 fetch("utils/comments.json").then(reply => reply.json()).then(data => {
     comments = data
-    comment()
-    // setInterval(comment, 500)
 })
+
+setInterval(comment, 500) // à changer
 
 function comment()
 {
+    console.log('test')
     // fill the poll of comments to pick from is empty
-    if(comments_to_pick.length == 0) comments_to_pick = comments
-    let index = Math.floor(Math.random() * comments_to_pick.length)
-    let chosen_comment = comments_to_pick[index]
-    // remove the chosen comment to avoid getting it again until all comments have been picked up
-    comments_to_pick.splice(index, 1)
+    if(comments_to_pick.length == 0)
+    {
+        comments_to_pick = comments
+    }
 
-    let text = chosen_comment["text"]
-    let rating = chosen_comment["rating"]
-
-    const body = document.querySelector('body')
-
-    const div = document.createElement('div')
-    div.setAttribute('class', 'comment')
-    body.appendChild(div)
-
-    const p = document.createElement('p')
-    p.textContent = text
-    div.appendChild(p)
-
-    const stars = document.createElement('p')
-    stars.setAttribute('class', 'stars')
-    stars.textContent = getStarsRating(rating)
-    div.appendChild(stars)
-
-    div.addEventListener('click', (e) => {
-        document.querySelector('.comment').remove()
-    })
+    if(comments_to_pick.length > 0)
+    {
+        const index = Math.floor(Math.random() * comments_to_pick.length)
+        let chosen_comment = comments_to_pick[index]
+        // remove the chosen comment to avoid getting it again until all comments have been picked up
+        comments_to_pick.splice(index, 1)
+    
+        const text = chosen_comment["text"]
+        const rating = chosen_comment["rating"]
+    
+        const body = document.querySelector('body')
+    
+        const side = Math.round(Math.random())
+    
+        const div = document.createElement('div')
+        if(side == 0) div.classList.add('comment', 'left')
+        if(side == 1) div.classList.add('comment', 'right')
+        const page_pos = document.documentElement.scrollTop
+        div.style.top = (page_pos + window.innerHeight / 2) + "px"
+        body.appendChild(div)
+    
+        const p = document.createElement('p')
+        p.textContent = text
+        div.appendChild(p)
+    
+        const stars = document.createElement('p')
+        stars.setAttribute('class', 'stars')
+        stars.textContent = getStarsRating(rating)
+        div.appendChild(stars)
+    
+        const time = document.createElement('p')
+        const date = new Date()
+        let actual_time = date.getHours() + ':'
+        if(date.getMinutes() < 10) actual_time += '0' + date.getMinutes()
+        else actual_time += date.getMinutes()
+        time.textContent = actual_time
+        div.appendChild(time)
+    
+        div.addEventListener('click', (e) => {
+            document.querySelector('.comment').remove()
+        })
+    }
 }
 
 function getStarsRating(rating)

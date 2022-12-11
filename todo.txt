@@ -1,6 +1,7 @@
 Back :
 
 Front :
+Changer temps sur les commentaires
 Page menu
 Page Form
     newletter
@@ -8,9 +9,9 @@ Page Form
     connexion
     créer compte
     menu
-Commentaires page d'accueil
 (JS) confirm window on delete (menu / categories)
 
 QUESTIONS
 pourquoi ctrl+f5 fait parfois disparaître mes images expérience ?
 est-ce une bonne pratique de créer un div invisible qui prend l'espace du header ?
+comments.js -> comment créer une copie de la valeur de mes ommentaires et non copier le lien vers la donnée?

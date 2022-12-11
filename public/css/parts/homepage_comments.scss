@@ -1,25 +1,109 @@
-.stars
-{
-    font-family: 'BabelStone';
-    color: yellow;
-}
+/* source : https://codepen.io/ezenith/pen/pJLypJ , edited by Gabriel Rhéaume */
 
 .comment
 {
-    width: 100px;
-    height: 100px;
-    background-color: black;
+    background-color: #E6E5EB;
+    font-family: "font-family: roboto, sans-serif";
+    font-weight: 400;
+    font-style: normal;
+    text-align: left;
+    padding: 10px;
+    width: 200px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 1px solid #848585;
     position: absolute;
-    top: 500px;
-    left: 50vw;
+    z-index: 500;
+    top: 50vh;
+
+    p
+    {
+        padding: 10px 0;
+        margin: 0;
+        color: #2D2F30;
+    }
+
+    .stars
+    {
+        font-family: 'BabelStone';
+        color: yellow;
+    }
+
+    .time
+    {
+        color: #2D2F30;
+        position: absolute;
+        font-size: .85em;
+        font-weight: 300;
+        bottom: 5px;
+    }
+}
+
+.comment:before
+{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 16px solid transparent;
+    border-right: 16px solid transparent;
+}
+
+.comment:after
+{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
 }
 
 .comment.left
 {
-    left: 0;
+    left: 17px;
+}
+
+.comment.left:before
+{
+    border-top: 17px solid #848585;
+    top: -1px;
+    left: -17px;
+}
+
+.comment.left:after
+{
+    border-top: 15px solid #E6E5EB;
+    top: 0;
+    left: -15px;
 }
 
 .comment.right
 {
-    right: 0;
+    margin-left: calc(100% - 240px); // to change
+    right: 17px;
+}
+
+.comment.right:before
+{
+    border-bottom: 17px solid #848585;
+    bottom: -1px;
+    right: -17px;
+}
+
+.comment.right:after
+{
+    border-bottom: 15px solid #E6E5EB;
+    bottom: 0;
+    right: -15px;
+}
+
+.time.left
+{
+    left: 5px;
+}
+
+.time.right
+{
+    right: 5px;
 }
