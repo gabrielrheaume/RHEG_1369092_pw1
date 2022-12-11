@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1
--- Généré le : jeu. 01 déc. 2022 à 23:05
--- Version du serveur : 10.4.21-MariaDB
--- Version de PHP : 7.4.25
+-- Host: 127.0.0.1
+-- Generation Time: Dec 11, 2022 at 05:18 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 7.4.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `pw1_pubg4`
+-- Database: `pw1_pubg4`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `categories`
+-- Table structure for table `categories`
 --
 
 CREATE TABLE `categories` (
@@ -33,17 +33,17 @@ CREATE TABLE `categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `categories`
+-- Dumping data for table `categories`
 --
 
 INSERT INTO `categories` (`id`, `name`) VALUES
-(4, 'Nos CrÃ©ations'),
+(4, 'Nos Créations'),
 (5, 'Viande'),
 (6, 'Poisson'),
-(7, 'Ã€ Partager'),
+(7, 'À Partager'),
 (8, 'Burger'),
 (10, 'Salade'),
-(11, 'VÃ©gÃ©'),
+(11, 'Végé'),
 (12, 'Tartare'),
 (13, 'Chocolat'),
 (15, 'Caramel');
@@ -51,7 +51,7 @@ INSERT INTO `categories` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `comments`
+-- Table structure for table `comments`
 --
 
 CREATE TABLE `comments` (
@@ -61,7 +61,7 @@ CREATE TABLE `comments` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `comments`
+-- Dumping data for table `comments`
 --
 
 INSERT INTO `comments` (`id`, `text`, `rating`) VALUES
@@ -75,7 +75,7 @@ INSERT INTO `comments` (`id`, `text`, `rating`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `meals`
+-- Table structure for table `meals`
 --
 
 CREATE TABLE `meals` (
@@ -88,16 +88,33 @@ CREATE TABLE `meals` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `meals`
+-- Dumping data for table `meals`
 --
 
 INSERT INTO `meals` (`id`, `name`, `description`, `price`, `image`, `type_id`) VALUES
-(28, 'Salade VÃ©gÃ©tarienne', 'Donec et neque quis purus cursus mattis eu pulvinar velit. Praesent commodo rutrum nisl, at ultrices sem iaculis tincidunt. Nunc molestie accumsan porta. ', 14.99, 'public/uploads/salade_grecque.jpg', 4);
+(29, 'Salade du Jour', 'Fermentum lacinia lorem amet sit. Nunc et ipsum ut nisl ultricies vestibulum sit amet quis nisi. Fusce dignissim magna eu ante tincidunt consectetur.', 10.99, 'public/uploads/salade_du_jour.jpg', 3),
+(30, 'Potage du Moment', 'Fermentum lacinia lorem amet sit. Nunc et ipsum ut nisl ultricies vestibulum sit amet quis nisi. Fusce dignissim magna eu ante tincidunt consectetur.', 8.99, 'public/uploads/potage_du_moment.jpg', 3),
+(31, 'Ailes de Lapin', 'Ut interdum viverra lacinia. Pellentesque ac nunc a nulla rutrum dictum ac ac diam. Cras vel justo ligula.  Proin ut ex et elit dapibus tempus vitae vitae magna. Nam a arcu sed ante efficitur semper. ', 16.49, 'public/uploads/ailes_lapin.jpg', 3),
+(32, 'Nachos', 'Nunc et ipsum ut nisl ultricies fermentum lacinia lorem amet sit. Nunc et ipsum ut nisl ultricies vestibulum sit amet quis nisi. Fusce dignissim magna eu ante tincidunt consectetur.', 18.99, 'public/uploads/nachos.jpg', 3),
+(33, 'Calamar', 'Proin ut ex et elit dapibus tempus vitae vitae magna. Nam a arcu sed ante efficitur semper. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', 16.99, 'public/uploads/calamar.jpg', 3),
+(34, 'Poutine', 'Morbi tincidunt fermentum lacinia. Nunc et ipsum ut nisl ultricies vestibulum sit amet quis nisi. Fusce dignissim magna eu ante tincidunt consectetur.', 14.99, 'public/uploads/poutine.jpg', 3),
+(35, 'Burger double classique avec frites', 'Deux galettes de bœuf, cheddar, bacon, tomate, laitue romaine, ognon rouge, sauce maison, servi avec frites', 15.99, 'public/uploads/burger.jpg', 4),
+(36, 'Filets de poulet avec frites', 'Filets de poulet pané avec un mélange d’épices maison, servis avec frites', 13.99, 'public/uploads/filets_de_poulet.jpg', 4),
+(37, 'Burger au Poulet', 'Morbi tincidunt fermentum lacinia. Nunc et ipsum ut nisl ultricies vestibulum sit amet quis nisi.', 15.99, 'public/uploads/burger.jpg', 4),
+(38, 'Salade Grecque', 'Donec at nisi tortor. Interdum et malesuada fames ac ante ipsum primis in faucibus. In vitae rutrum arcu. ', 18.99, 'public/uploads/salade_grecque.jpg', 4),
+(39, 'Salade Végétarienne', 'Donec et neque quis purus cursus mattis eu pulvinar velit. Praesent commodo rutrum nisl, at ultrices sem iaculis tincidunt. Nunc molestie accumsan porta. ', 14.99, 'public/uploads/salade_grecque.jpg', 3),
+(40, 'Tartare au Boeuf', 'Proin faucibus quam lorem, non condimentum turpis blandit non. ', 24.99, 'public/uploads/tartare_boeuf.jpg', 4),
+(41, 'Tartare de Légume', 'Etiam ut tincidunt lectus. Curabitur gravida est in finibus ultricies. Vestibulum volutpat erat vel libero ultrices placerat. ', 22.99, 'public/uploads/tartare_legume.jpg', 4),
+(42, 'Côtes levées (Ribs)', 'Etiam dictum purus justo, at mattis justo bibendum in. In aliquam elementum enim, quis pretium purus efficitur ac. Curabitur in pretium leo.', 19.99, 'public/uploads/ribs.jpg', 4),
+(43, 'Un bon p\'tit Steak', 'Praesent aliquam a dolor eu rutrum. Sed at efficitur enim. Morbi quis placerat risus. Aenean ipsum massa, hendrerit eu molestie sit amet, mollis quis ante.  ', 14.99, 'public/uploads/chad-montano-M0lUxgLnlfk-unsplash.jpg', 4),
+(44, 'Brownie', 'Vestibulum vel ex dolor. Maecenas et turpis nibh. Aliquam in imperdiet tortor. Interdum et malesuada fames ac ante ipsum primis in faucibus. ', 7.99, 'public/uploads/brownie.jpg', 5),
+(45, 'Cupcake style Ferrero', 'Suspendisse id fringilla turpis. Aenean eleifend vulputate lacus, a pharetra metus. Sed eget pharetra sem. Proin tristique fringilla urna id pharetra. Vivamus sed pellentesque orci.', 8.99, 'public/uploads/cupcake_ferrero.jpg', 5),
+(46, 'Gâteau au Fromage et Caramel', 'Proin tristique fringilla urna id pharetra. Vivamus sed pellentesque orci.  ', 10.99, 'public/uploads/gateau_fromage_caramel.jpg', 5);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `meals_categories`
+-- Table structure for table `meals_categories`
 --
 
 CREATE TABLE `meals_categories` (
@@ -107,17 +124,36 @@ CREATE TABLE `meals_categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `meals_categories`
+-- Dumping data for table `meals_categories`
 --
 
 INSERT INTO `meals_categories` (`id`, `meal_id`, `category_id`) VALUES
-(8, 28, 10),
-(9, 28, 11);
+(10, 29, 4),
+(11, 30, 4),
+(12, 31, 5),
+(13, 32, 7),
+(14, 33, 6),
+(15, 34, 4),
+(16, 35, 8),
+(17, 36, 5),
+(18, 37, 8),
+(19, 38, 10),
+(20, 39, 11),
+(21, 39, 10),
+(22, 40, 5),
+(23, 40, 12),
+(24, 41, 12),
+(25, 41, 11),
+(26, 42, 5),
+(27, 43, 5),
+(28, 44, 13),
+(29, 45, 13),
+(30, 46, 15);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `newsletter_infos`
+-- Table structure for table `newsletter_infos`
 --
 
 CREATE TABLE `newsletter_infos` (
@@ -126,22 +162,10 @@ CREATE TABLE `newsletter_infos` (
   `name` tinytext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Déchargement des données de la table `newsletter_infos`
---
-
-INSERT INTO `newsletter_infos` (`id`, `email`, `name`) VALUES
-(1, 'ontest', 'sdth'),
-(2, 'ontest', 'sdth'),
-(3, 'ontest', 'sthjyrj'),
-(4, 'whynot', 'srh'),
-(5, 'dfj@fhm', 'dfykj'),
-(6, 'salutbonjour@coucou.kikoo', 'sbck');
-
 -- --------------------------------------------------------
 
 --
--- Structure de la table `types`
+-- Table structure for table `types`
 --
 
 CREATE TABLE `types` (
@@ -150,18 +174,18 @@ CREATE TABLE `types` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `types`
+-- Dumping data for table `types`
 --
 
 INSERT INTO `types` (`id`, `name`) VALUES
-(3, 'EntrÃ©e'),
+(3, 'Entrée'),
 (4, 'Repas'),
 (5, 'Dessert');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -174,37 +198,37 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `admin`) VALUES
-(4, 'Gabriel', 'RhÃ©eaume', 'admin@test.com', '$2y$10$RaIgT6ctLyByiFWDV8qDTORxKIcJNNIPK0..VwoSAa4oOlXMJayXS', 1);
+(4, 'Gabriel', 'Rhéaume', 'admin@test.com', '$2y$10$RaIgT6ctLyByiFWDV8qDTORxKIcJNNIPK0..VwoSAa4oOlXMJayXS', 1);
 
 --
--- Index pour les tables déchargées
+-- Indexes for dumped tables
 --
 
 --
--- Index pour la table `categories`
+-- Indexes for table `categories`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `comments`
+-- Indexes for table `comments`
 --
 ALTER TABLE `comments`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `meals`
+-- Indexes for table `meals`
 --
 ALTER TABLE `meals`
   ADD PRIMARY KEY (`id`),
   ADD KEY `type_id` (`type_id`);
 
 --
--- Index pour la table `meals_categories`
+-- Indexes for table `meals_categories`
 --
 ALTER TABLE `meals_categories`
   ADD PRIMARY KEY (`id`),
@@ -212,81 +236,81 @@ ALTER TABLE `meals_categories`
   ADD KEY `meal_id` (`meal_id`);
 
 --
--- Index pour la table `newsletter_infos`
+-- Indexes for table `newsletter_infos`
 --
 ALTER TABLE `newsletter_infos`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `types`
+-- Indexes for table `types`
 --
 ALTER TABLE `types`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT pour les tables déchargées
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT pour la table `categories`
+-- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT pour la table `comments`
+-- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT pour la table `meals`
+-- AUTO_INCREMENT for table `meals`
 --
 ALTER TABLE `meals`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
--- AUTO_INCREMENT pour la table `meals_categories`
+-- AUTO_INCREMENT for table `meals_categories`
 --
 ALTER TABLE `meals_categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
--- AUTO_INCREMENT pour la table `newsletter_infos`
+-- AUTO_INCREMENT for table `newsletter_infos`
 --
 ALTER TABLE `newsletter_infos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT pour la table `types`
+-- AUTO_INCREMENT for table `types`
 --
 ALTER TABLE `types`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT pour la table `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- Contraintes pour les tables déchargées
+-- Constraints for dumped tables
 --
 
 --
--- Contraintes pour la table `meals`
+-- Constraints for table `meals`
 --
 ALTER TABLE `meals`
   ADD CONSTRAINT `meals_ibfk_1` FOREIGN KEY (`type_id`) REFERENCES `types` (`id`);
 
 --
--- Contraintes pour la table `meals_categories`
+-- Constraints for table `meals_categories`
 --
 ALTER TABLE `meals_categories`
   ADD CONSTRAINT `meals_categories_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`),
