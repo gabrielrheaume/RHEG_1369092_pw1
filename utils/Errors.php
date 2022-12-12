@@ -11,7 +11,7 @@
          */
         public static function getMessage()
         {
-            if(isset($_GET["error"])) self::errorSwitch($_GET["success"]);
+            if(isset($_GET["error"])) self::errorSwitch($_GET["error"]);
         }
 
         /**
@@ -22,7 +22,7 @@
          */
         public static function errorSwitch(int $error_number)
         {
-            ?> <p class='error'> <?php
+            ?> <div class='error'><p> <?php
             switch($error_number)
             {
                 case 1 : ?> Un ou plusieurs champs sont manquants <?php break;
@@ -37,7 +37,7 @@
                 case 10 : ?> L'image n'a pas pu être traitée <?php break;
                 default : return null;
             }
-            ?> </p> <?php
+            ?> </p></div> <?php
         }
     }
     

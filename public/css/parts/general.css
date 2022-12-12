@@ -15,4 +15,32 @@ a {
 
 a:hover {
   text-decoration: none;
+}
+
+.success {
+  display: flex;
+  justify-content: center;
+}
+.success p {
+  margin: 0;
+  border: 1px solid #b7ecc4;
+  border-radius: 5px;
+  background-color: #d1f4da;
+  color: #457736;
+  font-size: 18px;
+  padding: 5px;
+}
+
+.error {
+  display: flex;
+  justify-content: center;
+}
+.error p {
+  margin: 0;
+  border: 1px solid #f57976;
+  border-radius: 5px;
+  background-color: #ffd6d0;
+  color: #e3211c;
+  font-size: 18px;
+  padding: 5px;
 }/*# sourceMappingURL=general.css.map */

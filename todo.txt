@@ -1,13 +1,14 @@
 Back :
 
 Front :
-Changer temps sur les commentaires
+Changer interval sur les commentaires
 Page menu
     rond choix type/catégorie difforme
     responsive
     display only 3 items
     "voir plus" button
     envoyer id pour modifier un plat
+
 Page Form
     newletter
     categories
@@ -15,13 +16,15 @@ Page Form
     créer compte
     menu
 style .error .success
+
 (opti) confirm window on delete (menu / categories)
 
 QUESTIONS
 IMPORTANT comments.js -> comment créer une copie de la valeur de mes commentaires et non copier le lien vers la donnée?
-À VOIR PLUS TARD AU PIRE rond menu catégorie difforme si texte trop long // pareil avec mes photos menu
-À VOIR PLUS TARD AU PIRE comment empêcher de voir des trucs bizarres de vueJS quand on load les pages
-PEU IMPORTANT pourquoi ctrl+f5 fait parfois disparaître mes images expérience ? (école seulement)
 RAPIDE est-ce une bonne pratique de créer un div invisible qui prend l'espace du header ?
 RAPIDE y a-t-il un moyen avec le .filter (VueJS) d'envoyer directement un autre paramètre?
+RAPIDE c'est quand est-ce qu'on présente le projet devant la classe ?
+À VOIR PLUS TARD AU PIRE rond menu catégorie difforme si texte trop long // pareil avec mes photos menu
+À VOIR PLUS TARD AU PIRE comment empêcher de voir des trucs bizarres de vueJS quand on load les pages
+PEU IMPORTANT pourquoi le responsive réagit différemment quand je teste avec l'option "toggle device toolbar" et sans ?
 

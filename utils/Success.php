@@ -22,7 +22,7 @@
          */
         public static function successSwitch($success_number)
         {
-            ?> <p class='success'> <?php
+            ?> <div class='success'><p> <?php
             switch($success_number)
             {
                 case 1 : ?> Votre abonnement à l'infolettre a été validé ! <?php break;
@@ -36,7 +36,7 @@
                 case 9 : ?> La catégorie a été retirée du plat <?php break;
                 default : return null;
             }
-            ?> </p> <?php
+            ?> </p></div> <?php
         }
     }
 ?>
