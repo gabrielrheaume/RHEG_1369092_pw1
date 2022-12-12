@@ -1,11 +1,12 @@
 let comments = []
-let comments_to_pick = comments
+let comments_to_pick = null
 
 fetch("utils/comments.json").then(reply => reply.json()).then(data => {
     comments = data
+    comments_to_pick = comments.slice()
 })
 
-setInterval(comment, 5500) // à changer
+setInterval(comment, 30000) // à changer
 
 /**
  * Display a comment that appears at the left (or right) of the screen
@@ -14,11 +15,10 @@ setInterval(comment, 5500) // à changer
  */
 function comment()
 {
-    console.log('test')
     // fill the poll of comments to pick from is empty
     if(comments_to_pick.length == 0)
     {
-        comments_to_pick = comments
+        comments_to_pick = comments.slice()
     }
 
     if(comments_to_pick.length > 0)
@@ -59,7 +59,7 @@ function comment()
         time.textContent = actual_time
         div.appendChild(time)
         
-        setTimeout(deleteComment, 5000, div)
+        setTimeout(deleteComment, 10000, div)
     
         div.addEventListener('click', (e) => {
             document.querySelector('.comment').remove()

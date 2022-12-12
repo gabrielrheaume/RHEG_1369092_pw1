@@ -308,7 +308,7 @@
             $success = $newsletter->subscribe($email, $_POST["name"]);
 
             if(!$success) $this->redirect("infolettre?error=5");
-            $this->redirect($_SESSION["last_page?success=1"]);
+            $this->redirect($_SESSION["last_page"] . "?success=1");
         }
 
         /***** Categories *****/

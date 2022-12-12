@@ -56,8 +56,8 @@
     </div>
 
     <div class="meals">
-        <h2>Entrée</h2>
-        <div v-for="meal of meals.filter(filterEntree)" class="meal entree">
+        <h2 v-show="display_entree">Entrée</h2>
+        <div v-for="meal of menu.filter(filterEntree)" class="meal entree">
             <img :src="meal['image']" alt="meal['description']">
             <div class="infos">
                 <h3>{{ meal['name'] }}</h3>
@@ -69,15 +69,15 @@
                 if($this->verifyUser())
                 {
                     ?>
-                        <p class="modify-link"><a href="modifier-menu">Modifier</a></p>
+                        <p class="modify-link"><a :href="getLink(meal['id'])">Modifier</a></p>
                     <?php
                 }
             ?>
         </div>
         <div class="no-meal" v-show="noEntree()">Il n'y a aucune entrée correspondant au(x) critère(s) sélectionné(s)</div>
         
-        <h2>Repas</h2>
-        <div v-for="meal of meals.filter(filterMain)" class="meal main">
+        <h2 v-show="display_main">Repas</h2>
+        <div v-for="meal of menu.filter(filterMain)" class="meal main">
             <img :src="meal['image']" alt="meal['description']">
             <div class="infos">
                 <h3>{{ meal['name'] }}</h3>
@@ -89,15 +89,15 @@
                 if($this->verifyUser())
                 {
                     ?>
-                        <p class="modify-link"><a href="modifier-menu">Modifier</a></p>
+                        <p class="modify-link"><a :href="getLink(meal['id'])">Modifier</a></p>
                     <?php
                 }
             ?>
         </div>
         <div class="no-meal" v-show="noMain()">Il n'y a aucune entrée correspondant au(x) critère(s) sélectionné(s)</div>
 
-        <h2>Dessert</h2>
-        <div v-for="meal of meals.filter(filterDessert)" class="meal dessert">
+        <h2 v-show="display_dessert">Dessert</h2>
+        <div v-for="meal of menu.filter(filterDessert)" class="meal dessert">
             <img :src="meal['image']" alt="meal['description']">
             <div class="infos">
                 <h3>{{ meal['name'] }}</h3>
@@ -109,14 +109,18 @@
                 if($this->verifyUser())
                 {
                     ?>
-                        <p class="modify-link"><a href="modifier-menu">Modifier</a></p>
+                        <p class="modify-link"><a :href="getLink(meal['id'])">Modifier</a></p>
                     <?php
                 }
             ?>
         </div>
         <div class="no-meal" v-show="noDessert()">Il n'y a aucune entrée correspondant au(x) critère(s) sélectionné(s)</div>
     </div>
+
+    <div class="voir-plus" @click="seeMore()"><p>Voir Plus</p></div>
 </div>
+
+
 
 <script src="public/js/menu.js" type="module"></script>
 

@@ -66,4 +66,30 @@
   bottom: 10px;
   margin: 0;
   font-size: 20px;
+}
+
+.voir-plus {
+  display: flex;
+  justify-content: center;
+  margin-top: 75px;
+}
+.voir-plus p {
+  font-family: "font-family: roboto, sans-serif";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 25px;
+  color: #2D2F30;
+  border: 2px solid #FC3833;
+  border-radius: 5px;
+  width: 165px;
+  height: 50px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.voir-plus p:hover {
+  border: 2px solid #2D2F30;
+  background-color: #2D2F30;
+  color: white;
 }/*# sourceMappingURL=menu.css.map */

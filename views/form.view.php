@@ -10,7 +10,7 @@
     $this->displayForm($display);
 ?>
 
-<div class="retour"><a href="<?= $_SESSION['last_page'] ?>">Retour</a></div>
+<div class="retour"><a href="<?= $_SESSION['last_page'] ?>"><img src="image.png" alt="" srcset=""></a></div>
 
 <?php
     include("parts/footer.php");
