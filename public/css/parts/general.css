@@ -41,4 +41,8 @@ a:hover {
   border: 1px solid #f57976;
   background-color: #ffd6d0;
   color: #e3211c;
+}
+
+a:hover {
+  cursor: pointer;
 }/*# sourceMappingURL=general.css.map */

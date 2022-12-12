@@ -38,14 +38,36 @@ fetch("utils/meals.json").then(reply => reply.json()).then(data => {
 function createArray(nb_elem)
 {
     let array = []
-    for(let i = 0; i < nb_elem; i++)
+    let i = 0
+    let added_elem = 0
+    while(added_elem < nb_elem && i < meals.value.length)
     {
-        array.push(meals.value[i])
+        if(isDisplayed(meals.value[i]["type_id"], meals.value[i]["categories"]))
+        {
+            array.push(meals.value[i])
+            added_elem++
+        }
+        i++
     }
     display_entree.value = verifyPresentType(array, 'Entrée')
     display_main.value = verifyPresentType(array, 'Repas')
     display_dessert.value = verifyPresentType(array, 'Dessert')
     return array
+}
+
+function isDisplayed(type_id, categories)
+{
+    console.log(chosen_category.value)
+    if(chosen_type.value != 0 && chosen_type.value != type_id) return false
+    if(chosen_category.value != 0)
+    {
+        for(let category of categories)
+        {
+            if(chosen_category.value == category) return true
+        }
+        return false
+    }
+    return true
 }
 
 /**
@@ -104,6 +126,7 @@ function selectChoice(type, received_value)
     {
         chosen_category.value = chosen_category.value == received_value ? 0 : received_value
     }
+    menu.value = createArray(nb_meals_display.value)
 }
 
 /**
