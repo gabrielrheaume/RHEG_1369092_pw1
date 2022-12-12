@@ -39,7 +39,28 @@
         public function displayMenu()
         {
             $this->setSessionPages("menu");
-            $title = "Menu";
+
+            $title = 'Menu';
+            
+            /* create json files to display menu with vueJS */
+            $types = json_encode((new Types)->all());
+            $file = fopen('utils/types.json', 'w');
+            fwrite($file, $types);
+            fclose($file);
+
+            $categories = json_encode((new Categories)->all());
+            $file = fopen('utils/categories.json', 'w');
+            fwrite($file, $categories);
+            fclose($file);
+
+            $meals = (new Meals)->getAllMealsAndCategories();
+            // if there is no meal, meals is an empty array
+            if(!$meals) $meals = false;
+            $meals = json_encode($meals);
+            $file = fopen('utils/meals.json', 'w');
+            fwrite($file, $meals);
+            fclose($file);
+
             include("views/menu.view.php");
         }
 

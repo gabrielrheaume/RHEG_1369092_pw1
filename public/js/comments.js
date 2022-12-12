@@ -7,6 +7,11 @@ fetch("utils/comments.json").then(reply => reply.json()).then(data => {
 
 setInterval(comment, 5500) // à changer
 
+/**
+ * Display a comment that appears at the left (or right) of the screen
+ * 
+ * @return void
+ */
 function comment()
 {
     console.log('test')
@@ -62,6 +67,12 @@ function comment()
     }
 }
 
+/**
+ * Convert numeric rating into string with stars representing that rating
+ * 
+ * @param float rating 
+ * @return string stars rating
+ */
 function getStarsRating(rating)
 {
     let rounddown = Math.floor(rating)
