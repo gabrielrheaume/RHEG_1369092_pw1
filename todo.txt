@@ -1,6 +1,9 @@
 Back :
 
 Front :
+retirer "voir plus" menu quand full list
+viande display que 2 résultats WHY ?!?!?!
+
 Page menu
     rond choix type/catégorie difforme, pareil image plat
 

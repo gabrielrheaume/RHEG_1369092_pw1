@@ -57,7 +57,6 @@ function createArray(nb_elem)
 
 function isDisplayed(type_id, categories)
 {
-    console.log(chosen_category.value)
     if(chosen_type.value != 0 && chosen_type.value != type_id) return false
     if(chosen_category.value != 0)
     {
