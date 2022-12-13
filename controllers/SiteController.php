@@ -117,6 +117,7 @@
          */
         public function displayFormPage(string $title, string $display)
         {
+            if($display == 'infolettre') $form_title = "S'inscrire à l'infolettre";
             include("views/form.view.php");
         }
         

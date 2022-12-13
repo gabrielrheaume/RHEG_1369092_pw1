@@ -72,6 +72,7 @@
 .menu-container .choices-and-admin .choices .category .type-menu .choice .full-circle,
 .menu-container .choices-and-admin .choices .category .category-menu .choice .empty-circle,
 .menu-container .choices-and-admin .choices .category .category-menu .choice .full-circle {
+  flex-shrink: 0;
   width: 15px;
   height: 15px;
   border-radius: 100%;
@@ -95,6 +96,7 @@
 .menu-container .choices-and-admin .choices .category .type-menu .choice p,
 .menu-container .choices-and-admin .choices .category .category-menu .choice p {
   font-size: 19px;
+  box-sizing: border-box;
 }
 .menu-container .choices-and-admin .choices .type .type-menu,
 .menu-container .choices-and-admin .choices .category .type-menu {

@@ -1,5 +1,6 @@
 .menu-container {
   margin-bottom: 75px;
+  padding-top: 125px;
 }
 
 .meals {
@@ -34,6 +35,7 @@
   max-height: 100%;
 }
 .meals .meal .infos {
+  box-sizing: border-box;
   padding: 0 0 0 5%;
   width: 75%;
   display: flex;

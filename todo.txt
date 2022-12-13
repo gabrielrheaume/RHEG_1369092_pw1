@@ -1,11 +1,12 @@
 Back :
 
 Front :
-retirer "voir plus" menu quand full list
-viande display que 2 résultats WHY ?!?!?!
+menu
 
 Page menu
-    rond choix type/catégorie difforme, pareil image plat
+    retirer "voir plus" menu quand full list
+    viande display que 2 résultats WHY ?!?!?!
+    Tartare et Végé n'affiche rien
 
 Page Form
     newsletter
@@ -15,11 +16,9 @@ Page Form
     menu
 
 (opti) confirm window on delete (menu / categories)
+empêcher les trucs bizarres de vueJS
 
 QUESTIONS
 IMPORTANT rond menu catégorie difforme si texte trop long // pareil avec mes photos menu
-RAPIDE est-ce une bonne pratique de créer un div invisible qui prend l'espace du header ?
 RAPIDE y a-t-il un moyen avec le .filter (VueJS) d'envoyer directement un autre paramètre?
-À VOIR PLUS TARD AU PIRE comment empêcher de voir des trucs bizarres de vueJS quand on load les pages
-PEU IMPORTANT pourquoi le responsive réagit différemment quand je teste avec l'option "toggle device toolbar" et sans ?
 

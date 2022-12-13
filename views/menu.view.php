@@ -1,15 +1,12 @@
 <?php
     include("parts/header.php");
 ?>
-    
-<div class="header-size"></div>
-
-<?php
-    Errors::getMessage();
-    Success::getMessage();
-?>
 
 <div class="menu-container" id="app">
+    <?php
+        Errors::getMessage();
+        Success::getMessage();
+    ?>
     <h1>Menu</h1>
     <div class="choices-and-admin">
         <div class="choices">

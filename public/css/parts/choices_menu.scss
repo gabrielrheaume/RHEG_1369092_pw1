@@ -74,6 +74,7 @@
                         .empty-circle,
                         .full-circle
                         {
+                            flex-shrink: 0;
                             width: 15px;
                             height: 15px;
                             border-radius: 100%;
@@ -94,6 +95,7 @@
                         p
                         {
                             font-size: 19px;
+                            box-sizing: border-box;
                         }
                     }
                 }
