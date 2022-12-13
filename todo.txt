@@ -1,21 +1,16 @@
 Back :
 
 Front :
-menu
-
 Page menu
     retirer "voir plus" menu quand full list
     viande display que 2 résultats WHY ?!?!?!
     Tartare et Végé n'affiche rien
 
 Page Form
-    categories
     menu
 
 Code QR
 
 (opti) confirm window on delete (menu / categories)
-empêcher les trucs bizarres de vueJS
-
-QUESTIONS
-RAPIDE y a-t-il un moyen avec le .filter (VueJS) d'envoyer directement un autre paramètre?
+(opti) empêcher les trucs bizarres de vueJS
+(opti) envoyer un paramètres directement dans le .filter (menu)
