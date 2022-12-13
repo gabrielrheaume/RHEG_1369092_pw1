@@ -117,7 +117,11 @@
          */
         public function displayFormPage(string $title, string $display)
         {
+            // var_dump($display); exit();
             if($display == 'infolettre') $form_title = "S'inscrire à l'infolettre";
+            if($display == 'connexion') $form_title = "Connexion";
+            if($display == 'compte') $form_title = "Créer un compte";
+            if($display == 'categorie') $form_title = "Modification de catégories";
             include("views/form.view.php");
         }
         

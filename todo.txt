@@ -10,14 +10,12 @@ Page menu
 
 Page Form
     categories
-    connexion
-    créer compte
     menu
+
+Code QR
 
 (opti) confirm window on delete (menu / categories)
 empêcher les trucs bizarres de vueJS
 
 QUESTIONS
-IMPORTANT rond menu catégorie difforme si texte trop long // pareil avec mes photos menu
 RAPIDE y a-t-il un moyen avec le .filter (VueJS) d'envoyer directement un autre paramètre?
-

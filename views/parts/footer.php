@@ -1,6 +1,6 @@
     <footer>
         <?php
-            if($_SESSION["actual_page"] != 'infolettre' && $_SESSION["actual_page"] != 'connexion' && $_SESSION["actual_page"] != 'creer-compte' && $_SESSION["actual_page"] != 'modifier-menu' && $_SESSION["actual_page"] != 'modifier-categories')
+            if(!isset($display))
             {
                 ?>
                     <div class="newsletter">

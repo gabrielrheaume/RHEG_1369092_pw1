@@ -1,12 +1,12 @@
-.menu-container {
+.menu-container#app {
   margin: 0 10%;
   color: #2D2F30;
 }
-.menu-container h1 {
+.menu-container#app h1 {
   font-size: 100px;
   margin: 0;
 }
-.menu-container .choices-and-admin {
+.menu-container#app .choices-and-admin {
   margin-top: 20px;
   border: 1px solid #2D2F30;
   display: flex;
@@ -15,29 +15,29 @@
   align-items: center;
   padding: 20px;
 }
-.menu-container .choices-and-admin .choices {
+.menu-container#app .choices-and-admin .choices {
   display: flex;
   flex-direction: row;
   font-size: 30px;
 }
-.menu-container .choices-and-admin .choices .type,
-.menu-container .choices-and-admin .choices .category,
-.menu-container .choices-and-admin .choices .all {
+.menu-container#app .choices-and-admin .choices .type,
+.menu-container#app .choices-and-admin .choices .category,
+.menu-container#app .choices-and-admin .choices .all {
   margin: 0 20px;
 }
-.menu-container .choices-and-admin .choices .type,
-.menu-container .choices-and-admin .choices .category {
+.menu-container#app .choices-and-admin .choices .type,
+.menu-container#app .choices-and-admin .choices .category {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   position: relative;
 }
-.menu-container .choices-and-admin .choices .type *,
-.menu-container .choices-and-admin .choices .category * {
+.menu-container#app .choices-and-admin .choices .type *,
+.menu-container#app .choices-and-admin .choices .category * {
   margin: 0;
 }
-.menu-container .choices-and-admin .choices .type .arrow,
-.menu-container .choices-and-admin .choices .category .arrow {
+.menu-container#app .choices-and-admin .choices .type .arrow,
+.menu-container#app .choices-and-admin .choices .category .arrow {
   color: #FC3833;
   font-size: 18px;
   font-weight: bold;
@@ -45,33 +45,33 @@
   align-items: flex-end;
   margin-left: 3px;
 }
-.menu-container .choices-and-admin .choices .type .type-menu,
-.menu-container .choices-and-admin .choices .type .category-menu,
-.menu-container .choices-and-admin .choices .category .type-menu,
-.menu-container .choices-and-admin .choices .category .category-menu {
+.menu-container#app .choices-and-admin .choices .type .type-menu,
+.menu-container#app .choices-and-admin .choices .type .category-menu,
+.menu-container#app .choices-and-admin .choices .category .type-menu,
+.menu-container#app .choices-and-admin .choices .category .category-menu {
   position: absolute;
   top: 40px;
   background-color: white;
   border: 1px solid #2D2F30;
   z-index: 50;
 }
-.menu-container .choices-and-admin .choices .type .type-menu .choice,
-.menu-container .choices-and-admin .choices .type .category-menu .choice,
-.menu-container .choices-and-admin .choices .category .type-menu .choice,
-.menu-container .choices-and-admin .choices .category .category-menu .choice {
+.menu-container#app .choices-and-admin .choices .type .type-menu .choice,
+.menu-container#app .choices-and-admin .choices .type .category-menu .choice,
+.menu-container#app .choices-and-admin .choices .category .type-menu .choice,
+.menu-container#app .choices-and-admin .choices .category .category-menu .choice {
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 10px;
 }
-.menu-container .choices-and-admin .choices .type .type-menu .choice .empty-circle,
-.menu-container .choices-and-admin .choices .type .type-menu .choice .full-circle,
-.menu-container .choices-and-admin .choices .type .category-menu .choice .empty-circle,
-.menu-container .choices-and-admin .choices .type .category-menu .choice .full-circle,
-.menu-container .choices-and-admin .choices .category .type-menu .choice .empty-circle,
-.menu-container .choices-and-admin .choices .category .type-menu .choice .full-circle,
-.menu-container .choices-and-admin .choices .category .category-menu .choice .empty-circle,
-.menu-container .choices-and-admin .choices .category .category-menu .choice .full-circle {
+.menu-container#app .choices-and-admin .choices .type .type-menu .choice .empty-circle,
+.menu-container#app .choices-and-admin .choices .type .type-menu .choice .full-circle,
+.menu-container#app .choices-and-admin .choices .type .category-menu .choice .empty-circle,
+.menu-container#app .choices-and-admin .choices .type .category-menu .choice .full-circle,
+.menu-container#app .choices-and-admin .choices .category .type-menu .choice .empty-circle,
+.menu-container#app .choices-and-admin .choices .category .type-menu .choice .full-circle,
+.menu-container#app .choices-and-admin .choices .category .category-menu .choice .empty-circle,
+.menu-container#app .choices-and-admin .choices .category .category-menu .choice .full-circle {
   flex-shrink: 0;
   width: 15px;
   height: 15px;
@@ -79,37 +79,37 @@
   box-sizing: border-box;
   margin-right: 10px;
 }
-.menu-container .choices-and-admin .choices .type .type-menu .choice .empty-circle,
-.menu-container .choices-and-admin .choices .type .category-menu .choice .empty-circle,
-.menu-container .choices-and-admin .choices .category .type-menu .choice .empty-circle,
-.menu-container .choices-and-admin .choices .category .category-menu .choice .empty-circle {
+.menu-container#app .choices-and-admin .choices .type .type-menu .choice .empty-circle,
+.menu-container#app .choices-and-admin .choices .type .category-menu .choice .empty-circle,
+.menu-container#app .choices-and-admin .choices .category .type-menu .choice .empty-circle,
+.menu-container#app .choices-and-admin .choices .category .category-menu .choice .empty-circle {
   border: 1px solid #FC3833;
 }
-.menu-container .choices-and-admin .choices .type .type-menu .choice .full-circle,
-.menu-container .choices-and-admin .choices .type .category-menu .choice .full-circle,
-.menu-container .choices-and-admin .choices .category .type-menu .choice .full-circle,
-.menu-container .choices-and-admin .choices .category .category-menu .choice .full-circle {
+.menu-container#app .choices-and-admin .choices .type .type-menu .choice .full-circle,
+.menu-container#app .choices-and-admin .choices .type .category-menu .choice .full-circle,
+.menu-container#app .choices-and-admin .choices .category .type-menu .choice .full-circle,
+.menu-container#app .choices-and-admin .choices .category .category-menu .choice .full-circle {
   background-color: #FC3833;
 }
-.menu-container .choices-and-admin .choices .type .type-menu .choice p,
-.menu-container .choices-and-admin .choices .type .category-menu .choice p,
-.menu-container .choices-and-admin .choices .category .type-menu .choice p,
-.menu-container .choices-and-admin .choices .category .category-menu .choice p {
+.menu-container#app .choices-and-admin .choices .type .type-menu .choice p,
+.menu-container#app .choices-and-admin .choices .type .category-menu .choice p,
+.menu-container#app .choices-and-admin .choices .category .type-menu .choice p,
+.menu-container#app .choices-and-admin .choices .category .category-menu .choice p {
   font-size: 19px;
   box-sizing: border-box;
 }
-.menu-container .choices-and-admin .choices .type .type-menu,
-.menu-container .choices-and-admin .choices .category .type-menu {
+.menu-container#app .choices-and-admin .choices .type .type-menu,
+.menu-container#app .choices-and-admin .choices .category .type-menu {
   width: 162.8px;
 }
-.menu-container .choices-and-admin .choices .type .category-menu,
-.menu-container .choices-and-admin .choices .category .category-menu {
+.menu-container#app .choices-and-admin .choices .type .category-menu,
+.menu-container#app .choices-and-admin .choices .category .category-menu {
   width: 129.89px;
 }
-.menu-container .choices-and-admin .admin {
+.menu-container#app .choices-and-admin .admin {
   font-size: 22px;
 }
-.menu-container .choices-and-admin .admin a {
+.menu-container#app .choices-and-admin .admin a {
   margin-left: 30px;
 }
 

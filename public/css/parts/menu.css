@@ -73,7 +73,7 @@
 .voir-plus {
   display: flex;
   justify-content: center;
-  margin-top: 75px;
+  margin: 75px 0;
 }
 .voir-plus p {
   font-family: "font-family: roboto, sans-serif";
