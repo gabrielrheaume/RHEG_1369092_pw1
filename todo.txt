@@ -9,7 +9,6 @@ Page menu
     Tartare et Végé n'affiche rien
 
 Page Form
-    newsletter
     categories
     connexion
     créer compte

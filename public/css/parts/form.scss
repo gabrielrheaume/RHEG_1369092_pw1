@@ -6,6 +6,7 @@
     display: flex;
     justify-content: center;
     margin: 0;
+    font-weight: normal;
 }
 
 .form-section
@@ -15,7 +16,7 @@
     height: 600px;
     border-radius: 10px;
     margin: 0 auto 50px auto;
-    background-color: rgb(122, 12, 10, 0.15);
+    background-color: #F7F1F1;
     display: flex;
     position: relative;
 
@@ -25,6 +26,7 @@
         height: 100%;
         border-top-left-radius: 10px;
         border-bottom-left-radius: 10px;
+
         
         form
         {
@@ -32,12 +34,19 @@
             height: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: space-evenly;
+            justify-content: center;
             align-items: center;
+
+            .input-infos
+            {
+                display: flex;
+                flex-direction: column;
+            }
         }
 
         .submit
         {
+            margin-top: 75px;
             background-color: white;
             border: 2px solid #FC3833;
             color: #2D2F30;
@@ -95,5 +104,42 @@
 .input
 {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse; // necessary to use the selector "input:focus + span"
+    align-items: flex-start;
+    width: 100%;
+
+    span
+    {
+        font-size: 25px;
+        margin: 20px 0 5px 0;
+        color: #2D2F30;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    input
+    {
+        background-color: transparent;
+        border: 0px;
+        border-bottom: 1px solid #2D2F30;
+        padding: 3px;
+        width: 100%;
+        height: 30px;
+        font-family: linotype-didot, serif;
+        font-weight: 400;
+        font-style: italic;
+        font-size: 17px;
+    }
+
+    input:focus
+    {
+        border: 0px;
+        border-bottom: 1px solid #FC3833;
+        outline: none;
+    }
+
+    input:focus + span
+    {
+        color: #FC3833;
+    }
 }
