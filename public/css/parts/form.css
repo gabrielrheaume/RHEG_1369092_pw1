@@ -158,6 +158,12 @@
   font-family: linotype-didot, serif;
   font-weight: lighter;
   font-style: italic;
+  -webkit-text-decoration: underline #2D2F30;
+          text-decoration: underline #2D2F30;
+}
+.input label:hover {
+  -webkit-text-decoration: underline #FC3833;
+          text-decoration: underline #FC3833;
 }
 
 .modify {

@@ -35,6 +35,8 @@
                 case 8 : ?> Le champ est vid <?php break;
                 case 9 : ?> Une erreur est survenue lors de l'exécution de la requête <?php break;
                 case 10 : ?> L'image n'a pas pu être traitée <?php break;
+                case 11: ?> Vous êtes déjà connecté <?php break;
+                case 12: ?> Le plat sélectionné est introuvable <?php break;
                 default : return null;
             }
             ?> </p></div> <?php

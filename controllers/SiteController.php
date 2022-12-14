@@ -140,8 +140,8 @@
             // not enough datas to do queries only when it's used
             $categories["types"] = (new Types)->all();
             $categories["categories"] = (new Categories)->all();
-            $meals = (new Meals)->getAllMealsAndCategories();
-            if(!$meals) $meals = false; // if there is no meal, meals is an empty array
+            if(isset($_GET["id"]) && empty($_GET["id"])) $this->redirect("menu?error=12");
+            $meal = (new Meals)->byId($_GET["id"]);
 
             switch($display)
             {
@@ -175,6 +175,7 @@
          */
         public function displayLogIn()
         {
+            if($this->verifyUser()) $this->redirect("menu?error=11");
             $this->setSessionPages("connexion");
             $title = "Connexion";
             $display = "connexion";

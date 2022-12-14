@@ -1,5 +1,9 @@
-<span>Modifier un plat :</span>
 <?php
+    if($meal)
+    {
+            var_dump($meal); exit();
+    }
+?>
     if($meals)
     {
         foreach($meals as $meal)

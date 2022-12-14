@@ -210,6 +210,12 @@
         font-family: linotype-didot, serif;
         font-weight: lighter;
         font-style: italic;
+        text-decoration: underline #2D2F30;
+    }
+
+    label:hover
+    {
+        text-decoration: underline #FC3833;
     }
 }
 
