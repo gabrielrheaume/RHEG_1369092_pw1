@@ -4,6 +4,8 @@
             var_dump($meal); exit();
     }
 ?>
+
+<?php
     if($meals)
     {
         foreach($meals as $meal)
