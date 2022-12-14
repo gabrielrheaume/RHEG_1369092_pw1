@@ -1,6 +1,7 @@
 Back :
 
 Front :
+ajuster error and success display in form
 ajouter le display de l'admin catégorie
 responsive choice-menu (ajouter plat)
 Page menu

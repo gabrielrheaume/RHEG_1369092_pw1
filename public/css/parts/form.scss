@@ -162,7 +162,8 @@
         justify-content: flex-start;
     }
 
-    input
+    input,
+    select
     {
         background-color: transparent;
         border: 0px;
@@ -176,16 +177,39 @@
         font-size: 17px;
     }
 
-    input:focus
+    input:focus,
+    select:focus
     {
         border: 0px;
         border-bottom: 1px solid #FC3833;
         outline: none;
     }
 
-    input:focus + span
+    input:focus + span,
+    select:focus + span
     {
         color: #FC3833;
+    }
+
+    .file,
+    .file:focus
+    {
+        // to make the file input invisible, but still in the html
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+    }
+
+    label
+    {
+        margin-top: 5px;
+        color: #2D2F30;
+        font-family: linotype-didot, serif;
+        font-weight: lighter;
+        font-style: italic;
     }
 }
 
@@ -256,21 +280,24 @@
     }
 }
 
-@media screen and (max-width: 900px)
+.selects
 {
-    .form-section
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .input
     {
-        height: 450px;
+        width: 45%;
 
-        .form
+        span
         {
-            box-sizing: border-box;
-            width: 100%;
+            font-size: 17px;
         }
+    }
 
-        .image
-        {
-            display: none;
-        }
+    .input:focus
+    {
+        color: #2D2F30;
     }
 }

@@ -120,7 +120,8 @@
   display: flex;
   justify-content: flex-start;
 }
-.input input {
+.input input,
+.input select {
   background-color: transparent;
   border: 0px;
   border-bottom: 1px solid #2D2F30;
@@ -132,13 +133,31 @@
   font-style: italic;
   font-size: 17px;
 }
-.input input:focus {
+.input input:focus,
+.input select:focus {
   border: 0px;
   border-bottom: 1px solid #FC3833;
   outline: none;
 }
-.input input:focus + span {
+.input input:focus + span,
+.input select:focus + span {
   color: #FC3833;
+}
+.input .file,
+.input .file:focus {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+.input label {
+  margin-top: 5px;
+  color: #2D2F30;
+  font-family: linotype-didot, serif;
+  font-weight: lighter;
+  font-style: italic;
 }
 
 .modify {
@@ -191,15 +210,17 @@
   margin-top: 0;
 }
 
-@media screen and (max-width: 900px) {
-  .form-section {
-    height: 450px;
-  }
-  .form-section .form {
-    box-sizing: border-box;
-    width: 100%;
-  }
-  .form-section .image {
-    display: none;
-  }
+.selects {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.selects .input {
+  width: 45%;
+}
+.selects .input span {
+  font-size: 17px;
+}
+.selects .input:focus {
+  color: #2D2F30;
 }/*# sourceMappingURL=form.css.map */
