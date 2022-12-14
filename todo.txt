@@ -1,6 +1,7 @@
 Back :
 
 Front :
+responsive choice-menu (ajouter plat)
 Page menu
     retirer "voir plus" menu quand full list
     viande display que 2 résultats WHY ?!?!?!

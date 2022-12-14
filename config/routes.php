@@ -12,7 +12,8 @@
         "infolettre" => "displayNewsletterForm",
         "connexion" => "displayLogIn",
         "creer-compte" => "displayAccountCreation",
-        "modifier-menu" => "displayUpdateMenu",
+        "modifier-plat" => "displayUpdateMenu",
+        "ajouter-plat" => "",
         "modifier-categories" => "displayUpdateCategories",
         /***** Submit Form *****/
         /* Users */

@@ -253,7 +253,7 @@ function noDessert()
  */
 function getLink(id)
 {
-    return 'modifier-menu?id=' + id
+    return 'modifier-plat?id=' + id
 }
 
 /**

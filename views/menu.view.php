@@ -42,6 +42,7 @@
                 {
                     ?> 
                         <a href="modifier-categories">Modifier les catégories</a>
+                        <a href="ajouter-plat">Ajouter un plat</a>
                     <?php
                 }
                 if($this->verifyAdmin())
