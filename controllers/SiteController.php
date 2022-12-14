@@ -117,11 +117,15 @@
          */
         public function displayFormPage(string $title, string $display)
         {
-            if($display == 'infolettre') $form_title = "S'inscrire à l'infolettre";
-            if($display == 'connexion') $form_title = "Connexion";
-            if($display == 'compte') $form_title = "Créer un compte";
-            if($display == 'categorie') $form_title = "Modification de catégories";
-            if($display == 'modifier-plat') $form_title = "Modification d'un plat";
+            switch($display)
+            {
+                case 'infolettre': $form_title = "S'inscrire à l'infolettre"; break;
+                case 'connexion': $form_title = "Connexion"; break;
+                case 'compte': $form_title = "Créer un compte"; break;
+                case 'modifier-plat': $form_title = "Modification d'un plat"; break;
+                case 'ajouter-plat': $form_title = "Ajouter un plat"; break;
+                case 'categorie': $form_title = "Modification de catégories"; break;
+            }
             include("views/form.view.php");
         }
         
@@ -145,6 +149,7 @@
                 case "connexion": include("views/parts/connection.form.php"); break;
                 case "compte": include("views/parts/createaccount.form.php"); break;
                 case "modifier-plat": include("views/parts/modify_meal.form.php"); break;
+                case "ajouter-plat": include("views/parts/add_meal.form.php"); break;
                 case "categorie": include("views/parts/categories.form.php"); break;
                 default: Errors::errorSwitch(6);
             }
@@ -198,9 +203,23 @@
         public function displayUpdateMeal()
         {
             if(!$this->verifyUser()) $this->redirect("index");
-            $this->setSessionPages("modifier-menu");
-            $title = "Modification du menu";
+            $this->setSessionPages("modifier-plat");
+            $title = "Modification d'un plat";
             $display = "modifier-plat";
+            $this->displayFormPage($title, $display);
+        }
+
+        /**
+         * Get informations to display the requested form
+         *
+         * @return void
+         */
+        public function displayAddMeal()
+        {
+            if(!$this->verifyUser()) $this->redirect("index");
+            $this->setSessionPages("ajouter-plat");
+            $title = "Ajout de plat";
+            $display = "ajouter-plat";
             $this->displayFormPage($title, $display);
         }
 
@@ -313,6 +332,7 @@
             $success = $newsletter->subscribe($email, $_POST["name"]);
 
             if(!$success) $this->redirect("infolettre?error=5");
+            if(!isset($_SESSION["last_page"]) || empty($_SESSION["last_page"])) $this->redirect("index?success=1");
             $this->redirect($_SESSION["last_page"] . "?success=1");
         }
 
@@ -331,7 +351,7 @@
             if(!empty($_POST["category"])) $success = (new Categories)->insert($_POST["category"]);
             if(!empty($_POST["type"])) $success = (new Types)->insert($_POST["type"]);
 
-            if($success) $this->redirect("modifier-menu?success=2");
+            if($success) $this->redirect("menu?success=2");
             $this->redirect("modifier-menu?error=9");
         }
         
@@ -350,7 +370,7 @@
             if($type == "type") $success = (new Types)->edit($id, $name);
             else $success = (new Categories)->edit($id, $name);
 
-            if($success) $this->redirect("modifier-categories?success=3");
+            if($success) $this->redirect("menu?success=3");
             $this->redirect("modifier-categories?error=8");
         }
         
@@ -369,7 +389,7 @@
             if($type == "type") $success = (new Types)->delete($id);
             else $success = (new Categories)->delete($id);
 
-            if($success) $this->redirect("modifier-categories?success=4");
+            if($success) $this->redirect("menu?success=4");
             $this->redirect("modifier-categories?error=8");
         }
 
@@ -381,16 +401,16 @@
          */
         public function addMeal()
         {
-            $this->verifyPOST("modifier-menu", "modifier-menu?error=1");
+            $this->verifyPOST("ajouter-plat", "ajouter-plat?error=1");
 
             $upload = new Upload("image", ["jpg", "jpeg", "png", "webp"]);
-            if(!$upload->isValid()) $this->redirect("modifier-menu?error=10");
+            if(!$upload->isValid()) $this->redirect("ajouter-plat?error=10");
             $image_path = $upload->moveTo("public/uploads");
 
             $success = (new Meals)->createMeal($_POST["name"], $_POST["type"], $_POST["category"], $_POST["description"], $_POST["price"], $image_path);
 
-            if($success) $this->redirect("modifier-menu?success=5");
-            $this->redirect("modifier-menu?error=9");
+            if($success) $this->redirect("menu?success=5");
+            $this->redirect("ajouter-plat?error=9");
         }
         
         /**
@@ -400,12 +420,12 @@
          */
         public function deleteMeal()
         {
-            $this->verifyPOST("modifier-menu", "modifier-menu?error=1");
+            $this->verifyPOST("modifier-plat", "modifier-plat?error=1");
 
             $success = (new Meals)->delete($_POST["id"]);
 
             if($success) $this->redirect("menu?success=6");
-            $this->redirect("menu?error=9");
+            $this->redirect("modifier-plat?error=9");
         }
         
         /**
@@ -415,8 +435,8 @@
          */
         public function modifyMeal()
         {
-            if(empty($_POST)) $this->redirect("modifier-menu");
-            if(empty($_POST["name"]) ||empty($_POST["description"]) ||empty($_POST["type"]) ||empty($_POST["category"]) ||empty($_POST["price"]) ||empty($_POST["id"]))  $this->redirect("modifier-menu?error=1");
+            if(empty($_POST)) $this->redirect("modifier-plat");
+            if(empty($_POST["name"]) ||empty($_POST["description"]) ||empty($_POST["type"]) ||empty($_POST["category"]) ||empty($_POST["price"]) ||empty($_POST["id"]))  $this->redirect("modifier-plat?error=1");
 
             $upload = new Upload("image", ["jpg", "jpeg", "png", "webp"]);
             if($upload->isValid())
@@ -424,13 +444,13 @@
                 $image_path = $upload->moveTo("public/uploads");
 
                 $success = (new Meals)->modifyMealPicture($image_path, $_POST["id"]);
-                if(!$success) $this->redirect("modifier-menu?error=9");
+                if(!$success) $this->redirect("modifier-plat?error=9");
             }
 
             $success = (new Meals)->modifyMeal($_POST["name"], $_POST["description"], $_POST["type"], $_POST["category"], $_POST["price"], $_POST["id"]);
 
-            if(!$success) $this->redirect("modifier-menu?error=9");
-            $this->redirect("modifier-menu?success=7");
+            if(!$success) $this->redirect("modifier-plat?error=9");
+            $this->redirect("menu?success=7");
         }
 
         /***** Meals and Categories *****/
@@ -441,9 +461,10 @@
          */
         public function addNewCategory()
         {
-            $this->verifyPOST("modifier-menu", "modifier-menu?error=1");
+            $this->verifyPOST("modifier-categories", "modifier-categories?error=1");
 
-            if((new Meals_Categories)->addNewCategory($_POST["category"], $_POST["meal"])) $this->redirect("modifier-menu?success=8");
+            $success = (new Meals_Categories)->addNewCategory($_POST["category"], $_POST["meal"]);
+            if($success) $this->redirect("menu?success=8");
             $this->redirect("modifier-menu?error=9");
         }
 
@@ -456,7 +477,8 @@
         {
             $this->verifyPOST("modifier-menu", "modifier-menu?error=1");
 
-            if((new Meals_Categories)->deleteCategoryOfMeal($_POST["category_name"], $_POST["meal_id"])) $this->redirect("modifier-menu?success=9");
+            $success = (new Meals_Categories)->deleteCategoryOfMeal($_POST["category_name"], $_POST["meal_id"]);
+            if($success) $this->redirect("menu?success=9");
             $this->redirect("modifier-menu?error=9");
         }
     }

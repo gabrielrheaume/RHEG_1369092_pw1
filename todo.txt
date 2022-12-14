@@ -1,6 +1,7 @@
 Back :
 
 Front :
+ajouter le display de l'admin catégorie
 responsive choice-menu (ajouter plat)
 Page menu
     retirer "voir plus" menu quand full list
