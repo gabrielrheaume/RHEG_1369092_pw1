@@ -121,7 +121,7 @@
             if($display == 'connexion') $form_title = "Connexion";
             if($display == 'compte') $form_title = "Créer un compte";
             if($display == 'categorie') $form_title = "Modification de catégories";
-            if($display == 'modify-menu') $form_title = "Modification du Menu";
+            if($display == 'modifier-plat') $form_title = "Modification d'un plat";
             include("views/form.view.php");
         }
         
@@ -144,7 +144,7 @@
                 case "infolettre": include("views/parts/newsletter.form.php"); break;
                 case "connexion": include("views/parts/connection.form.php"); break;
                 case "compte": include("views/parts/createaccount.form.php"); break;
-                case "modify-menu": include("views/parts/modify_menu.form.php"); break;
+                case "modifier-plat": include("views/parts/modify_meal.form.php"); break;
                 case "categorie": include("views/parts/categories.form.php"); break;
                 default: Errors::errorSwitch(6);
             }
@@ -195,12 +195,12 @@
          * 
          * @return void
          */
-        public function displayUpdateMenu()
+        public function displayUpdateMeal()
         {
             if(!$this->verifyUser()) $this->redirect("index");
             $this->setSessionPages("modifier-menu");
             $title = "Modification du menu";
-            $display = "modify-menu";
+            $display = "modifier-plat";
             $this->displayFormPage($title, $display);
         }
 
