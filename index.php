@@ -13,8 +13,8 @@ require_once "controllers/SiteController.php";
 // Get $routes
 require_once("config/routes.php");
 // Get Messages class
-require_once("utils/errors.php");
-require_once("utils/success.php");
+require_once("utils/Errors.php");
+require_once("utils/Success.php");
 
 // Start session
 session_start();

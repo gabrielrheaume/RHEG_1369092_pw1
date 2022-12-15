@@ -258,15 +258,15 @@
             $this->verifyPOST("creer-compte", "creer-compte?error=1");
 
             $email = $_POST["email"];
-            $newsletter = new Users();
+            $users = new Users();
             
-            if(!$newsletter->verifyUniqueEmail($email)) $this->redirect("creer-compte?error=3");
+            if(!$users->verifyUniqueEmail($email)) $this->redirect("creer-compte?error=3");
 
             $first_name = $_POST["first_name"];
             $last_name = $_POST["last_name"];
             $password = $_POST["password"];
 
-            $success = $newsletter->create($first_name, $last_name, $email, $password);
+            $success = $users->create($first_name, $last_name, $email, $password);
 
             if($success) $this->redirect("menu?success=2");
             $this->redirect("creer-compte?error=2");
@@ -297,6 +297,7 @@
         public function logOut()
         {
             $_SESSION["user_id"] = 0;
+            if(isset($_SESSION["admin"])) $_SESSION["admin"] = false;
             $this->redirect("index");
         }
 

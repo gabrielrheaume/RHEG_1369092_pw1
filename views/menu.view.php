@@ -95,6 +95,13 @@
                 {
                     ?>
                         <p class="modify-link"><a :href="getLink(meal['id'])">Modifier</a></p>
+                        <!-- delete meal -->
+                        <form action="delete_meal_submit" method="post" class='delete'>
+                            <div class="input-infos">
+                                <input type="hidden" name="id" value="<?= $meal['id'] ?>">
+                                <input type="submit" value="🗑" class="delete-meal">
+                            </div>
+                        </form>
                     <?php
                 }
             ?>
@@ -115,6 +122,13 @@
                 {
                     ?>
                         <p class="modify-link"><a :href="getLink(meal['id'])">Modifier</a></p>
+                        <!-- delete meal -->
+                        <form action="delete_meal_submit" method="post" class='delete'>
+                            <div class="input-infos">
+                                <input type="hidden" name="id" value="<?= $meal['id'] ?>">
+                                <input type="submit" value="🗑" class="delete-meal">
+                            </div>
+                        </form>
                     <?php
                 }
             ?>

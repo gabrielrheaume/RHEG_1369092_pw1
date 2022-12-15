@@ -1,5 +1,7 @@
 À FAIRE ABSOLUMENT
+User créé peut créer un compte -> À vérifier ABSOLUMENT
 Page menu :
+    Réparer le 'Tous' + vérifier qu'il fait bien un reset ET un changement à l'array
     retirer "voir plus" menu quand full list
     viande display que 2 résultats WHY ?!?!?!
     Tartare et Végé n'affiche rien
@@ -15,6 +17,7 @@ empêcher les trucs bizarres de vueJS
 SI J'AI LE TEMPS
 Méthode 'BetterDisplay' (Meals) à changer pour le SiteController
 envoyer un paramètres directement dans le .filter (menu)
+Changer l'image dans 'modification d'un plat' pour le plat en cours de modification
 
 OPTIMISATION
 Responsive 500px+ :
