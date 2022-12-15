@@ -19,7 +19,20 @@
                         if($display == 'categorie' || $display == 'modifier-plat')
                         {
                             ?>
-                                <div :class="getClass('add')" @click.prevent="affichage='add'"><a href="#">Ajouter <?php if($display == 'modifier-plat') { ?>une catégorie<?php } ?></a></div>
+                                <div :class="getClass('add')" @click.prevent="affichage='add'">
+                                    <a href="#">
+                                        <?php
+                                            if($display == 'categorie')
+                                            {
+                                                ?>Ajouter<?php
+                                            }
+                                            if($display == 'modifier-plat')
+                                            {
+                                                ?>Gérer les catégories<?php
+                                            }
+                                        ?>
+                                    </a>
+                                </div>
                                 <div :class="getClass('modify')" @click.prevent="affichage='modify'"><a href="#">Modifier</a></div>
                                 <script src="public/js/vueJS_modification.js" type="module"></script>
                             <?php

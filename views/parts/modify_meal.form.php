@@ -1,4 +1,4 @@
-<div class="modify" v-show="affichage='modify'">
+<div class="modify" v-show="affichage == 'modify'">
     <div class="modify-meal-form">
         <!-- modify meal -->
         <form action="modify_meal_submit" method="post" enctype="multipart/form-data">
@@ -65,39 +65,47 @@
     </div>
 </div>
 
-<div class="modify" v-show="affichage == 'add'">
-    <?php
-        if($meal["categories"])
-        {
-            foreach($meal["categories"] as $category_of_meal)
-            {
-                ?>
-                <!-- delete meal's category -->
-                <form action="delete_category_of_meal_submit" method="post" class='delete'>
-                    <div class="input-infos">
-                        <input type="hidden" name="category_name" value="<?= $category_of_meal ?>">
-                        <input type="hidden" name="meal_id" value="<?= $meal['id'] ?>">
-                        <input type="submit" value="🗑" class='submit'>
-                    </div>
-                </form>
-                <?php
-            }
-        }
-    ?>
+<div id="modify-category-of-meal" v-show="affichage == 'add'">
         <!-- add a category to the actual meal -->
         <form action="add_category_submit" method="post">
-            <span>Ajouter une catégorie :</span>
-            <select name="category">
-                <?php
-                    foreach($categories["categories"] as $category)
-                    {
-                        ?>
-                            <option value="<?= $category['id'] ?>" <?= (new Meals_Categories)->isCategoryAssociated($meal["id"], $category["id"])?>><?= $category["name"] ?></option>
+            <div class="selects">
+                <div class="input">
+                    <select name="category">
                         <?php
-                    }
-                ?>
-            </select>
+                            foreach($categories["categories"] as $category)
+                            {
+                                ?>
+                                    <option value="<?= $category['id'] ?>" <?= (new Meals_Categories)->isCategoryAssociated($meal["id"], $category["id"])?>><?= $category["name"] ?></option>
+                                <?php
+                            }
+                        ?>
+                    </select>
+                    <span>Ajouter une catégorie :</span>
+                </div>
+            </div>
             <input type="hidden" name="meal" value="<?= $meal['id'] ?>">
-            <input type="submit" value="Soumettre">
+            <input type="submit" value="Soumettre" class="submit">
         </form>
+
+        <hr>
+    <?php
+        foreach($meal["categories"] as $category)
+        {
+            ?>
+                <div class="infos">
+                    <p><?= $category ?></p>
+                    <form action="delete_category_of_meal_submit" method="post" class='delete'>
+                        <div class="input-infos">
+                            <input type="hidden" name="category_name" value="<?= $category_of_meal ?>">
+                            <input type="hidden" name="meal_id" value="<?= $meal['id'] ?>">
+                            <input type="submit" value="🗑" class='submit'>
+                        </div>
+                    </form>
+                </div>
+            <?php
+        }
+    ?>
+</div>
+
+<div class="modify" v-show="affichage == 'added'">
 </div>

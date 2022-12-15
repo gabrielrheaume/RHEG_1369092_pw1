@@ -1,24 +1,44 @@
-Back :
-Méthode 'BetterDisplay' (Meals) à changer pour le SiteController
-
-Front :
-ajuster error and success display in form
-responsive choice-menu (ajouter plat)
-mettre les types de plat à la fin de la liste des catégories à modifier
-
-Page menu
+À FAIRE ABSOLUMENT
+Page menu :
     retirer "voir plus" menu quand full list
     viande display que 2 résultats WHY ?!?!?!
     Tartare et Végé n'affiche rien
-
-Page Form Modify-meal
-    changer description en textarea qui grossit quand focus
-
-Page Form
-    menu
-
+Responsive 1200px+ :
+    Menu
+    À Propos
+    Contact
+    Forms
+        Infolettre
+        Connexion
+        Créer Compte
+        Catégories
+        Ajouter Plat
+        Modifier Plat
 Code QR
 
-(opti) confirm window on delete (menu / categories)
-(opti) empêcher les trucs bizarres de vueJS
-(opti) envoyer un paramètres directement dans le .filter (menu)
+À FAIRE IDÉALEMENT
+ajuster error and success display in form
+mettre les types de plat à la fin de la liste des catégories à modifier
+Page Form Modify-meal :
+    changer description en textarea qui grossit quand focus
+empêcher les trucs bizarres de vueJS
+
+SI J'AI LE TEMPS
+Méthode 'BetterDisplay' (Meals) à changer pour le SiteController
+envoyer un paramètres directement dans le .filter (menu)
+
+OPTIMISATION
+Responsive 500px+ :
+    Accueil - Expérience
+    Menu
+    À Propos
+    Contact
+    Forms
+        Infolettre
+        Connexion
+        Créer Compte
+        Catégories
+        Ajouter Plat
+        Modifier Plat
+confirm window on delete (menu / categories)
+améliorer apparence des commentaires

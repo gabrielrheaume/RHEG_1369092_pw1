@@ -237,4 +237,60 @@
 }
 .selects .input:focus {
   color: #2D2F30;
+}
+
+#modify-category-of-meal form .selects {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#modify-category-of-meal form .selects .input {
+  width: 100%;
+  align-items: center;
+}
+#modify-category-of-meal form .selects .input span {
+  margin: 38px 0 25px 0;
+  font-size: 25px;
+  width: 75%;
+  display: flex;
+  justify-content: center;
+}
+#modify-category-of-meal form .selects .input select {
+  width: 50%;
+}
+#modify-category-of-meal form .submit {
+  margin: 25px 0 50px 0;
+}
+#modify-category-of-meal hr {
+  width: 75%;
+}
+#modify-category-of-meal .infos {
+  padding-top: 25px;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#modify-category-of-meal .infos p {
+  width: 75%;
+  font-size: 30px;
+  margin: 0;
+  padding: 0 0 0 12.5%;
+  display: flex;
+}
+#modify-category-of-meal .infos .delete {
+  width: 25%;
+  height: 80%;
+  margin: 0;
+  display: flex;
+  justify-content: flex-start;
+}
+#modify-category-of-meal .infos .delete .input-infos {
+  width: 100%;
+  height: 100%;
+}
+#modify-category-of-meal .infos .delete .input-infos input {
+  margin: 0;
 }/*# sourceMappingURL=form.css.map */
