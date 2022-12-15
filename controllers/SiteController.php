@@ -140,15 +140,23 @@
             // not enough datas to do queries only when it's used
             $categories["types"] = (new Types)->all();
             $categories["categories"] = (new Categories)->all();
-            if(isset($_GET["id"]) && empty($_GET["id"])) $this->redirect("menu?error=12");
-            $meal = (new Meals)->byId($_GET["id"]);
+            if(isset($_GET["id"]) && !empty($_GET["id"]))
+            {
+                $meal = (new Meals)->byId($_GET["id"]);
+                if(!$meal) $this->redirect("menu?error=12");
+                $categories_for_meal = (new Categories)->getMealCategories($meal["id"]);
+                $meal["categories"] = (new Meals)->betterDisplay($categories_for_meal);
+
+            }
 
             switch($display)
             {
                 case "infolettre": include("views/parts/newsletter.form.php"); break;
                 case "connexion": include("views/parts/connection.form.php"); break;
                 case "compte": include("views/parts/createaccount.form.php"); break;
-                case "modifier-plat": include("views/parts/modify_meal.form.php"); break;
+                case "modifier-plat":
+                    if(isset($meal)) include("views/parts/modify_meal.form.php");
+                    break;
                 case "ajouter-plat": include("views/parts/add_meal.form.php"); break;
                 case "categorie": include("views/parts/categories.form.php"); break;
                 default: Errors::errorSwitch(6);

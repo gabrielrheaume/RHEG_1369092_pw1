@@ -1,17 +1,3 @@
-<form action="add_category_submit" method="post" v-show="affichage == 'add'">
-    <div class="input-infos">
-        <div class="input">
-            <input type="text" name="category" placeholder="Burger">
-            <span>Catégorie :</span>
-        </div>
-        <div class="input">
-            <input type="text" name="type" placeholder="Dessert">
-            <span>Type de plat :</span>
-        </div>
-    </div>
-    <input type="submit" value="Soumettre" class="submit">
-</form>
-
 <div class="modify" v-show="affichage == 'modify'">
     <?php
         foreach($categories as $types_or_categories)
@@ -48,3 +34,17 @@
         }
     ?>
 </div>
+
+<form action="add_category_submit" method="post" v-show="affichage == 'add'">
+    <div class="input-infos">
+        <div class="input">
+            <input type="text" name="category" placeholder="Burger">
+            <span>Catégorie :</span>
+        </div>
+        <div class="input">
+            <input type="text" name="type" placeholder="Dessert">
+            <span>Type de plat :</span>
+        </div>
+    </div>
+    <input type="submit" value="Soumettre" class="submit">
+</form>

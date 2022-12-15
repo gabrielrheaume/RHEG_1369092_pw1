@@ -1,14 +1,18 @@
 Back :
+Méthode 'BetterDisplay' (Meals) à changer pour le SiteController
 
 Front :
 ajuster error and success display in form
-ajouter le display de l'admin catégorie
 responsive choice-menu (ajouter plat)
+mettre les types de plat à la fin de la liste des catégories à modifier
 
 Page menu
     retirer "voir plus" menu quand full list
     viande display que 2 résultats WHY ?!?!?!
     Tartare et Végé n'affiche rien
+
+Page Form Modify-meal
+    changer description en textarea qui grossit quand focus
 
 Page Form
     menu
