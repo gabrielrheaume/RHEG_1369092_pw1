@@ -33,7 +33,7 @@
                         }
                     ?>
                 </select>
-                <span>Type de plat :</span>
+                <span>Type :</span>
             </div>
         </div>
         <div class="input">

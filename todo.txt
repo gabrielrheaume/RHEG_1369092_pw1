@@ -3,17 +3,6 @@ Page menu :
     retirer "voir plus" menu quand full list
     viande display que 2 résultats WHY ?!?!?!
     Tartare et Végé n'affiche rien
-Responsive 1200px+ :
-    Menu
-    À Propos
-    Contact
-    Forms
-        Infolettre
-        Connexion
-        Créer Compte
-        Catégories
-        Ajouter Plat
-        Modifier Plat
 Code QR
 
 À FAIRE IDÉALEMENT
@@ -30,9 +19,7 @@ envoyer un paramètres directement dans le .filter (menu)
 OPTIMISATION
 Responsive 500px+ :
     Accueil - Expérience
-    Menu
-    À Propos
-    Contact
+    Menu - conflit avec plusieurs catégories et modifier / delete
     Forms
         Infolettre
         Connexion

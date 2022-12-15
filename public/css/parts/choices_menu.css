@@ -112,130 +112,166 @@
 .menu-container#app .choices-and-admin .admin a {
   margin-left: 30px;
 }
+.menu-container#app .choices-and-admin .admin a:first-child {
+  margin-left: 0;
+}
 
-@media screen and (max-width: 1153px) {
-  .menu-container .choices-and-admin {
+@media screen and (max-width: 1356px) {
+  .menu-container#app .choices-and-admin {
     flex-direction: column;
   }
-  .menu-container .choices-and-admin .admin {
+  .menu-container#app .choices-and-admin .admin {
     margin-top: 10px;
   }
 }
-@media screen and (max-width: 641px) {
-  .menu-container .choices-and-admin .choices {
+@media screen and (max-width: 769px) {
+  .menu-container#app .choices-and-admin .choices {
     font-size: 28px;
   }
-  .menu-container .choices-and-admin .choices .type .arrow,
-.menu-container .choices-and-admin .choices .category .arrow {
+  .menu-container#app .choices-and-admin .choices .type .arrow,
+.menu-container#app .choices-and-admin .choices .category .arrow {
     font-size: 16px;
   }
-  .menu-container .choices-and-admin .choices .type .type-menu {
+  .menu-container#app .choices-and-admin .choices .type .type-menu {
     width: 151.69px;
   }
-  .menu-container .choices-and-admin .choices .category .category-menu {
+  .menu-container#app .choices-and-admin .choices .category .category-menu {
     width: 120.97px;
   }
-  .menu-container .choices-and-admin .choices .type .type-menu .choice .empty-circle,
-.menu-container .choices-and-admin .choices .type .type-menu .choice .full-circle,
-.menu-container .choices-and-admin .choices .category .category-menu .choice .empty-circle,
-.menu-container .choices-and-admin .choices .category .category-menu .choice .full-circle {
+  .menu-container#app .choices-and-admin .choices .type .type-menu .choice .empty-circle,
+.menu-container#app .choices-and-admin .choices .type .type-menu .choice .full-circle,
+.menu-container#app .choices-and-admin .choices .category .category-menu .choice .empty-circle,
+.menu-container#app .choices-and-admin .choices .category .category-menu .choice .full-circle {
     width: 12.5px;
     height: 12.5px;
   }
-  .menu-container .choices-and-admin .choices .type .type-menu .choice p,
-.menu-container .choices-and-admin .choices .category .category-menu .choice p {
+  .menu-container#app .choices-and-admin .choices .type .type-menu .choice p,
+.menu-container#app .choices-and-admin .choices .category .category-menu .choice p {
     font-size: 18px;
   }
-  .menu-container .choices-and-admin .admin {
+  .menu-container#app .choices-and-admin .admin {
     font-size: 21px;
   }
 }
-@media screen and (max-width: 612px) {
-  .menu-container .choices-and-admin .choices {
+@media screen and (max-width: 741px) {
+  .menu-container#app .choices-and-admin .choices {
     font-size: 26px;
   }
-  .menu-container .choices-and-admin .choices .type .arrow,
-.menu-container .choices-and-admin .choices .category .arrow {
+  .menu-container#app .choices-and-admin .choices .type .arrow,
+.menu-container#app .choices-and-admin .choices .category .arrow {
     font-size: 14px;
   }
-  .menu-container .choices-and-admin .choices .type .type-menu {
+  .menu-container#app .choices-and-admin .choices .type .type-menu {
     width: 140.58px;
   }
-  .menu-container .choices-and-admin .choices .category .category-menu {
+  .menu-container#app .choices-and-admin .choices .category .category-menu {
     width: 112.06px;
   }
-  .menu-container .choices-and-admin .choices .type .type-menu .choice .empty-circle,
-.menu-container .choices-and-admin .choices .type .type-menu .choice .full-circle,
-.menu-container .choices-and-admin .choices .category .category-menu .choice .empty-circle,
-.menu-container .choices-and-admin .choices .category .category-menu .choice .full-circle {
+  .menu-container#app .choices-and-admin .choices .type .type-menu .choice .empty-circle,
+.menu-container#app .choices-and-admin .choices .type .type-menu .choice .full-circle,
+.menu-container#app .choices-and-admin .choices .category .category-menu .choice .empty-circle,
+.menu-container#app .choices-and-admin .choices .category .category-menu .choice .full-circle {
     width: 10px;
     height: 10px;
   }
-  .menu-container .choices-and-admin .choices .type .type-menu .choice p,
-.menu-container .choices-and-admin .choices .category .category-menu .choice p {
+  .menu-container#app .choices-and-admin .choices .type .type-menu .choice p,
+.menu-container#app .choices-and-admin .choices .category .category-menu .choice p {
     font-size: 16px;
   }
-  .menu-container .choices-and-admin .admin {
+  .menu-container#app .choices-and-admin .admin {
     font-size: 20px;
   }
 }
-@media screen and (max-width: 585px) {
-  .menu-container .choices-and-admin .choices {
+@media screen and (max-width: 713px) {
+  .menu-container#app .choices-and-admin .choices {
     font-size: 24px;
   }
-  .menu-container .choices-and-admin .choices .type .arrow,
-.menu-container .choices-and-admin .choices .category .arrow {
+  .menu-container#app .choices-and-admin .choices .type .arrow,
+.menu-container#app .choices-and-admin .choices .category .arrow {
     font-size: 12px;
   }
-  .menu-container .choices-and-admin .admin {
+  .menu-container#app .choices-and-admin .admin {
     font-size: 19px;
   }
 }
-@media screen and (max-width: 551px) {
-  .menu-container .choices-and-admin .choices {
+@media screen and (max-width: 685px) {
+  .menu-container#app .choices-and-admin .choices {
     font-size: 23px;
   }
-  .menu-container .choices-and-admin .choices .type .arrow,
-.menu-container .choices-and-admin .choices .category .arrow {
+  .menu-container#app .choices-and-admin .choices .type .arrow,
+.menu-container#app .choices-and-admin .choices .category .arrow {
     font-size: 11px;
   }
-  .menu-container .choices-and-admin .admin {
+  .menu-container#app .choices-and-admin .admin {
     font-size: 18px;
   }
 }
-@media screen and (max-width: 536px) {
-  .menu-container .choices-and-admin .choices {
+@media screen and (max-width: 658px) {
+  .menu-container#app .choices-and-admin .choices {
     font-size: 22px;
   }
-  .menu-container .choices-and-admin .choices .type .arrow,
-.menu-container .choices-and-admin .choices .category .arrow {
+  .menu-container#app .choices-and-admin .choices .type .arrow,
+.menu-container#app .choices-and-admin .choices .category .arrow {
     font-size: 10px;
   }
-  .menu-container .choices-and-admin .admin {
+  .menu-container#app .choices-and-admin .admin {
     font-size: 17px;
   }
 }
-@media screen and (max-width: 521px) {
-  .menu-container .choices-and-admin .choices {
+@media screen and (max-width: 631px) {
+  .menu-container#app .choices-and-admin .choices {
     font-size: 21px;
   }
-  .menu-container .choices-and-admin .choices .type .arrow,
-.menu-container .choices-and-admin .choices .category .arrow {
+  .menu-container#app .choices-and-admin .choices .type .arrow,
+.menu-container#app .choices-and-admin .choices .category .arrow {
     font-size: 10px;
   }
-  .menu-container .choices-and-admin .admin {
-    font-size: 17px;
+  .menu-container#app .choices-and-admin .admin {
+    font-size: 16px;
   }
 }
-@media screen and (max-width: 507px) {
-  .menu-container .choices-and-admin .choices {
+@media screen and (max-width: 603px) {
+  .menu-container#app .choices-and-admin {
+    padding: 10px;
+  }
+  .menu-container#app .choices-and-admin .choices {
     font-size: 20px;
   }
-  .menu-container .choices-and-admin .choices .type .arrow,
-.menu-container .choices-and-admin .choices .category .arrow {
+  .menu-container#app .choices-and-admin .choices .type .arrow,
+.menu-container#app .choices-and-admin .choices .category .arrow {
     font-size: 10px;
   }
-  .menu-container .choices-and-admin .admin {
-    font-size: 17px;
+  .menu-container#app .choices-and-admin .admin {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 541px) {
+  .menu-container#app .choices-and-admin {
+    padding: 10px;
+  }
+  .menu-container#app .choices-and-admin .choices {
+    font-size: 20px;
+  }
+  .menu-container#app .choices-and-admin .choices .type .arrow,
+.menu-container#app .choices-and-admin .choices .category .arrow {
+    font-size: 10px;
+  }
+  .menu-container#app .choices-and-admin .admin {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 513px) {
+  .menu-container#app .choices-and-admin {
+    padding: 10px;
+  }
+  .menu-container#app .choices-and-admin .choices {
+    font-size: 20px;
+  }
+  .menu-container#app .choices-and-admin .choices .type .arrow,
+.menu-container#app .choices-and-admin .choices .category .arrow {
+    font-size: 10px;
+  }
+  .menu-container#app .choices-and-admin .admin {
+    font-size: 14px;
   }
 }/*# sourceMappingURL=choices_menu.css.map */

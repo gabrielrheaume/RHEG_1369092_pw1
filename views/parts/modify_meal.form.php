@@ -23,7 +23,7 @@
                                 }
                             ?>
                         </select>
-                        <span>Type de plat :</span>
+                        <span>Type :</span>
                     </div>
                     <div class="input">
                         <?php

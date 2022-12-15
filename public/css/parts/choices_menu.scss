@@ -1,4 +1,4 @@
-.menu-container#app
+.menu-container#app // the id is important to not have margin replace by another selector
 {
     margin: 0 10%;
     color: #2D2F30;
@@ -120,13 +120,18 @@
             {
                 margin-left: 30px;
             }
+
+            a:first-child
+            {
+                margin-left: 0;
+            }
         }
     }
 }
 
-@media screen and (max-width: 1153px)
+@media screen and (max-width: 1356px)
 {
-    .menu-container
+    .menu-container#app
     {
         .choices-and-admin
         {
@@ -140,9 +145,9 @@
     }
 }
 
-@media screen and (max-width: 641px)
+@media screen and (max-width: 769px)
 {
-    .menu-container
+    .menu-container#app
     {
         .choices-and-admin
         {
@@ -194,9 +199,9 @@
     }
 }
 
-@media screen and (max-width: 612px)
+@media screen and (max-width: 741px)
 {
-    .menu-container
+    .menu-container#app
     {
         .choices-and-admin
         {
@@ -248,9 +253,9 @@
     }
 }
 
-@media screen and (max-width: 585px)
+@media screen and (max-width: 713px)
 {
-    .menu-container
+    .menu-container#app
     {
         .choices-and-admin
         {
@@ -273,9 +278,9 @@
     }
 }
 
-@media screen and (max-width: 551px)
+@media screen and (max-width: 685px)
 {
-    .menu-container
+    .menu-container#app
     {
         .choices-and-admin
         {
@@ -298,9 +303,9 @@
     }
 }
 
-@media screen and (max-width: 536px)
+@media screen and (max-width: 658px)
 {
-    .menu-container
+    .menu-container#app
     {
         .choices-and-admin
         {
@@ -323,9 +328,9 @@
     }
 }
 
-@media screen and (max-width: 521px)
+@media screen and (max-width: 631px)
 {
-    .menu-container
+    .menu-container#app
     {
         .choices-and-admin
         {
@@ -342,18 +347,20 @@
 
             .admin
             {
-                font-size: 17px;
+                font-size: 16px;
             }
         }
     }
 }
 
-@media screen and (max-width: 507px)
+@media screen and (max-width: 603px)
 {
-    .menu-container
+    .menu-container#app
     {
         .choices-and-admin
         {
+            padding: 10px;
+
             .choices
             {
                 font-size: 20px;
@@ -367,7 +374,61 @@
 
             .admin
             {
-                font-size: 17px;
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 541px)
+{
+    .menu-container#app
+    {
+        .choices-and-admin
+        {
+            padding: 10px;
+
+            .choices
+            {
+                font-size: 20px;
+
+                .type .arrow,
+                .category .arrow
+                {
+                    font-size: 10px;
+                }
+            }
+
+            .admin
+            {
+                font-size: 15px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 513px)
+{
+    .menu-container#app
+    {
+        .choices-and-admin
+        {
+            padding: 10px;
+
+            .choices
+            {
+                font-size: 20px;
+
+                .type .arrow,
+                .category .arrow
+                {
+                    font-size: 10px;
+                }
+            }
+
+            .admin
+            {
+                font-size: 14px;
             }
         }
     }
