@@ -1,5 +1,4 @@
 À FAIRE ABSOLUMENT
-User créé peut créer un compte -> À vérifier ABSOLUMENT
 Page menu :
     Réparer le 'Tous' + vérifier qu'il fait bien un reset ET un changement à l'array
     retirer "voir plus" menu quand full list
