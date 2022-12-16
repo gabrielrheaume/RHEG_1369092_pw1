@@ -148,14 +148,17 @@ function selectAll()
  */
 function filterMeal(meal, type_of_meal)
 {
+
     if(meal['type'] != type_of_meal) return false
     if(chosen_type.value != 0 && chosen_type.value != meal['type_id']) return false
     if(chosen_category.value != 0)
     {
+        let find = false
         for(let category of meal["categories"])
         {
-            if(category != chosen_category.value) return false
+            if(category == chosen_category.value) find = true
         }
+        if(!find) return false
     }
     return true
 }
