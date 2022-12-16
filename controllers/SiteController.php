@@ -43,9 +43,10 @@
             $title = 'Menu';
             
             /* create json files to display menu with vueJS */
-            $types = json_encode((new Types)->all());
+            $types = (new Types)->all();
+            $types_json = json_encode($types);
             $file = fopen('utils/types.json', 'w');
-            fwrite($file, $types);
+            fwrite($file, $types_json);
             fclose($file);
 
             $categories = json_encode((new Categories)->all());

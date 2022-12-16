@@ -55,7 +55,7 @@
 
     <div class="meals">
         <h2 v-show="display_entree">Entrée</h2>
-        <div v-for="meal of menu.filter(filterEntree)" class="meal entree">
+        <div v-for="meal of menu.filter(item => filterMeal(item, 'Entrée'))" class="meal entree">
             <img :src="meal['image']" alt="meal['description']">
             <div class="infos">
                 <h3>{{ meal['name'] }}</h3>
@@ -82,7 +82,7 @@
         <div class="no-meal" v-show="noEntree() && display_entree">Il n'y a aucune entrée correspondant au(x) critère(s) sélectionné(s)</div>
         
         <h2 v-show="display_main">Repas</h2>
-        <div v-for="meal of menu.filter(filterMain)" class="meal main">
+        <div v-for="meal of menu.filter(item => filterMeal(item, 'Repas'))" class="meal main">
             <img :src="meal['image']" alt="meal['description']">
             <div class="infos">
                 <h3>{{ meal['name'] }}</h3>
@@ -109,7 +109,7 @@
         <div class="no-meal" v-show="noMain() && display_main">Il n'y a aucune entrée correspondant au(x) critère(s) sélectionné(s)</div>
 
         <h2 v-show="display_dessert">Dessert</h2>
-        <div v-for="meal of menu.filter(filterDessert)" class="meal dessert">
+        <div v-for="meal of menu.filter(item => filterMeal(item, 'Dessert'))" class="meal dessert">
             <img :src="meal['image']" alt="meal['description']">
             <div class="infos">
                 <h3>{{ meal['name'] }}</h3>
@@ -136,10 +136,8 @@
         <div class="no-meal" v-show="noDessert() && display_dessert">Il n'y a aucune entrée correspondant au(x) critère(s) sélectionné(s)</div>
     </div>
 
-    <div class="voir-plus" @click="seeMore()" v-show="nb_meals >= nb_meals_display"><p>Voir Plus</p></div>
+    <div class="voir-plus" @click="seeMore()" v-show="nb_meals > nb_meals_display"><p>Voir Plus</p></div>
 </div>
-
-
 
 <script src="public/js/menu.js" type="module"></script>
 

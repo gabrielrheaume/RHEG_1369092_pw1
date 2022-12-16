@@ -137,39 +137,7 @@ function selectAll()
 {
     chosen_type.value = 0
     chosen_category.value = 0
-}
-
-/**
- * Call filter method with one more parameter
- * 
- * @param object meal
- * @return bool
- */
-function filterEntree(meal)
-{
-    return filterMeal(meal, 'Entrée')
-}
-
-/**
- * Call filter method with one more parameter
- * 
- * @param object meal
- * @return bool
- */
-function filterMain(meal)
-{
-    return filterMeal(meal, 'Repas')
-}
-
-/**
- * Call filter method with one more parameter
- * 
- * @param object meal
- * @return bool
- */
-function filterDessert(meal)
-{
-    return filterMeal(meal, 'Dessert')
+    createArray(nb_meals_display)
 }
 
 /**
@@ -292,9 +260,7 @@ const root = {
             getMenu,
             selectChoice,
             selectAll,
-            filterEntree,
-            filterMain,
-            filterDessert,
+            filterMeal,
             typeCategories,
             noEntree,
             noMain,
