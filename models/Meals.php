@@ -86,26 +86,10 @@
 
                 $categories = (new Categories)->getMealCategories($meal["id"]);
 
-                $meals[$key]["categories"] = $this->betterDisplay($categories);
+                $meals[$key]["categories"] = (new SiteController)->betterDisplay($categories);
             }
 
             return $meals;
-        }
-
-        /**
-         * better display for categories array in each meal
-         * 
-         * @param array|bool $array, false if array is empty
-         */
-        public function betterDisplay(array $array)
-        {
-            if(empty($array)) return false;
-
-            foreach($array as $item)
-            {
-                $result[] = $item["name"];
-            }
-            return $result;
         }
 
         /**

@@ -1,3 +1,8 @@
+[v-cloak]
+{
+    display: none;
+}
+
 body
 {
     margin: 0;
@@ -60,4 +65,15 @@ a:hover
 a:hover
 {
     cursor: pointer;
+}
+
+.messages
+{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    top: 110px;
+    // margin: 0;
+    // left: 0;
 }

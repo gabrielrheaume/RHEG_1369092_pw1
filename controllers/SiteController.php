@@ -139,16 +139,9 @@
         public function displayForm(string $display)
         {
             // not enough datas to do queries only when it's used
-            $categories["types"] = (new Types)->all();
             $categories["categories"] = (new Categories)->all();
-            if(isset($_GET["id"]) && !empty($_GET["id"]))
-            {
-                $meal = (new Meals)->byId($_GET["id"]);
-                if(!$meal) $this->redirect("menu?error=12");
-                $categories_for_meal = (new Categories)->getMealCategories($meal["id"]);
-                $meal["categories"] = (new Meals)->betterDisplay($categories_for_meal);
-
-            }
+            $categories["types"] = (new Types)->all();
+            $meal = $this->getMealByID();
 
             switch($display)
             {
@@ -162,6 +155,21 @@
                 case "categorie": include("views/parts/categories.form.php"); break;
                 default: Errors::errorSwitch(6);
             }
+        }
+
+        /**
+         * Get meal informations of the id received with GET
+         * 
+         * @return array|false associative array of false if there is no id in GET
+         */
+        public function getMealByID()
+        {
+            if(!isset($_GET["id"]) || empty($_GET["id"])) return false;
+            $meal = (new Meals)->byId($_GET["id"]);
+            if(!$meal) $this->redirect("menu?error=12");
+            $categories_for_meal = (new Categories)->getMealCategories($meal["id"]);
+            $meal["categories"] = $this->betterDisplay($categories_for_meal);
+            return $meal;
         }
 
         /**
@@ -412,6 +420,7 @@
         public function addMeal()
         {
             $this->verifyPOST("ajouter-plat", "ajouter-plat?error=1");
+            if($_POST["category"] == 0 || $_POST["type"] == 0) $this->redirect("ajouter-plat?error=1");
 
             $upload = new Upload("image", ["jpg", "jpeg", "png", "webp"]);
             if(!$upload->isValid()) $this->redirect("ajouter-plat?error=10");
@@ -490,6 +499,36 @@
             $success = (new Meals_Categories)->deleteCategoryOfMeal($_POST["category_name"], $_POST["meal_id"]);
             if($success) $this->redirect("menu?success=9");
             $this->redirect("modifier-menu?error=9");
+        }
+
+        /***** General Methods *****/
+
+        /**
+         * better display for categories array in each meal
+         * 
+         * @param array|bool $array, false if array is empty
+         */
+        public function betterDisplay(array $array)
+        {
+            if(empty($array)) return false;
+
+            foreach($array as $item)
+            {
+                $result[] = $item["name"];
+            }
+            return $result;
+        }
+
+        /**
+         * Get image source of the image to use as background-image
+         *
+         * @param string $display form display
+         * @return string image's source
+         */
+        public function getBGimage($display)
+        {
+            if($display != 'modifier-plat') return "background-image: url('public/images/filets_de_poulet.jpg')";
+            return "background-image: url('" . $this->getMealByID()["image"] . "')";
         }
     }
 

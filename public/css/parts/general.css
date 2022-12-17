@@ -1,3 +1,7 @@
+[v-cloak] {
+  display: none;
+}
+
 body {
   margin: 0;
   font-family: "linotype-didot-headline, serif";
@@ -45,4 +49,12 @@ a:hover {
 
 a:hover {
   cursor: pointer;
+}
+
+.messages {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  top: 110px;
 }/*# sourceMappingURL=general.css.map */

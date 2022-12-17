@@ -1,7 +1,7 @@
 <form action="log_in_submit" method="post">
     <div class="input-infos">
         <div class="input">
-            <input type="email" name="email" placeholder="email@example.com" required>
+            <input type="email" name="email" placeholder="email@example.com" autofocus required>
             <span>E-mail :</span>
         </div>
         <div class="input">

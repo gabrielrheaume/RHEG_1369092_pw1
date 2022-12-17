@@ -8,7 +8,7 @@
                     <span>Nom du plat :</span>
                 </div>
                 <div class="input area">
-                    <input type="textarea" cols="4" rows="4" name="description" wrap="hard" value="<?= $meal['description'] ?>" required>
+                    <textarea name="description" cols="30" rows="10" value="<?= $meal['description'] ?>" required></textarea>
                     <span>Description :</span>
                 </div>
                 <div class="selects">

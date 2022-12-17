@@ -33,6 +33,15 @@
         border-bottom-left-radius: 10px;
         position: relative;
         color: #2D2F30;
+
+        .messages-form
+        {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            top: -40px;
+        }
         
         form
         {
@@ -51,9 +60,11 @@
             }
         }
 
-        .area textarea
+        form.add-meal
         {
-            height: 250px;
+            height: 500px;
+            justify-content: flex-start;
+            overflow: auto;
         }
 
         .submit
@@ -126,7 +137,6 @@
 
     .image
     {
-        background-image: url("../../images/filets_de_poulet.jpg");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -196,7 +206,8 @@
     }
 
     input:focus + span,
-    select:focus + span
+    select:focus + span,
+    textarea:focus + span
     {
         color: #FC3833;
     }
@@ -226,6 +237,28 @@
     label:hover
     {
         text-decoration: underline #FC3833;
+    }
+
+    textarea
+    {
+        width: 100%;
+        height: 200px;
+        line-height: 25px;
+        font-family: linotype-didot, serif;
+        font-weight: 400;
+        font-style: italic;
+        font-size: 17px;
+        background-color: transparent;
+        box-sizing: border-box;
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid #2D2F30;
+    }
+
+    textarea:focus
+    {
+        border-bottom: 1px solid #FC3833;
+        outline: none;
     }
 }
 

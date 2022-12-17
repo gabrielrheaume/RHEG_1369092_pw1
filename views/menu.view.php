@@ -2,15 +2,18 @@
     include("parts/header.php");
 ?>
 
-<div class="menu-container" id="app">
+<div class="messages">
     <?php
         Errors::getMessage();
         Success::getMessage();
     ?>
+</div>
+
+<div class="menu-container" id="app" v-cloak>
     <h1>Menu</h1>
     <div class="choices-and-admin">
         <div class="choices">
-            <p class="all" @click="selectAll">Tous</p>
+            <p class="all" @click="selectAll()">Tous</p>
             <div class="type" @click="getMenu('type')">
                 <p class="type">Type de Plat</p>
                 <p class="arrow">{{ menu_arrow_type }}</p>
@@ -79,7 +82,6 @@
                 }
             ?>
         </div>
-        <div class="no-meal" v-show="noEntree() && display_entree">Il n'y a aucune entrée correspondant au(x) critère(s) sélectionné(s)</div>
         
         <h2 v-show="display_main">Repas</h2>
         <div v-for="meal of menu.filter(item => filterMeal(item, 'Repas'))" class="meal main">
@@ -106,7 +108,6 @@
                 }
             ?>
         </div>
-        <div class="no-meal" v-show="noMain() && display_main">Il n'y a aucune entrée correspondant au(x) critère(s) sélectionné(s)</div>
 
         <h2 v-show="display_dessert">Dessert</h2>
         <div v-for="meal of menu.filter(item => filterMeal(item, 'Dessert'))" class="meal dessert">
@@ -133,10 +134,9 @@
                 }
             ?>
         </div>
-        <div class="no-meal" v-show="noDessert() && display_dessert">Il n'y a aucune entrée correspondant au(x) critère(s) sélectionné(s)</div>
     </div>
 
-    <div class="voir-plus" @click="seeMore()" v-show="nb_meals > nb_meals_display"><p>Voir Plus</p></div>
+    <div class="voir-plus" @click="seeMore()" v-show="displaySeeMore()"><p>Voir Plus</p></div>
 </div>
 
 <script src="public/js/menu.js" type="module"></script>

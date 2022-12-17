@@ -2,10 +2,12 @@
     include("parts/header.php");
 ?>
 
-<?php
-    Errors::getMessage();
-    Success::getMessage();
-?>
+<div class="messages">
+    <?php
+        Errors::getMessage();
+        Success::getMessage();
+    ?>
+</div>
 
 <!-- Heading Image -->
 <div class="heading-image">

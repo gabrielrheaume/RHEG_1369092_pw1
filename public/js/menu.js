@@ -12,8 +12,8 @@ const type_menu = ref(false)
 const chosen_type = ref(0)
 const chosen_category = ref(0)
 const display_entree = ref(false)
-const display_main = ref(true)
-const display_dessert = ref(true)
+const display_main = ref(false)
+const display_dessert = ref(false)
 
 fetch("utils/types.json").then(reply => reply.json()).then(data => {
     types.value = data
@@ -40,6 +40,7 @@ function createArray(nb_elem)
     let array = []
     let i = 0
     let added_elem = 0
+
     while(added_elem < nb_elem && i < meals.value.length)
     {
         if(isDisplayed(meals.value[i]["type_id"], meals.value[i]["categories"]))
@@ -49,12 +50,26 @@ function createArray(nb_elem)
         }
         i++
     }
+
+    display_entree.value = false
+    display_main.value = false
+    display_dessert.value = false
+
     display_entree.value = verifyPresentType(array, 'Entrée')
     display_main.value = verifyPresentType(array, 'Repas')
     display_dessert.value = verifyPresentType(array, 'Dessert')
+
     return array
 }
 
+/**
+ * Determine if a meal if displayed before the number of meals limit
+ * 
+ * @param int type_id 
+ * @param array categories
+ * 
+ * @return bool
+ */
 function isDisplayed(type_id, categories)
 {
     if(chosen_type.value != 0 && chosen_type.value != type_id) return false
@@ -135,9 +150,10 @@ function selectChoice(type, received_value)
  */
 function selectAll()
 {
-    chosen_type.value = 0
     chosen_category.value = 0
-    createArray(nb_meals_display)
+    chosen_type.value = 0
+
+    menu.value = createArray(nb_meals_display.value)
 }
 
 /**
@@ -181,42 +197,6 @@ function typeCategories(meal)
 }
 
 /**
- * Verify if there is an entree with chosen type and categories
- * 
- * @return bool true if there is no entree, false otherwise
- */
-function noEntree()
-{
-    if(chosen_category.value == 0 && chosen_type.value == 0) return false
-    if(!document.querySelector(".entree")) return true
-    return false
-}
-
-/**
- * Verify if there is a main meal with chosen type and categories
- * 
- * @return bool true if there is no meal, false otherwise
- */
-function noMain()
-{
-    if(chosen_category.value == 0 && chosen_type.value == 0) return false
-    if(!document.querySelector(".main")) return true
-    return false
-}
-
-/**
- * Verify if there is a main meal with chosen type and categories
- * 
- * @return bool true if there is no meal, false otherwise
- */
-function noDessert()
-{
-    if(chosen_category.value == 0 && chosen_type.value == 0) return false
-    if(!document.querySelector(".dessert")) return true
-    return false
-}
-
-/**
  * Create the link to modify a meal with his id
  * 
  * @param int id id of the meal
@@ -237,6 +217,22 @@ function seeMore()
     nb_meals_display.value += 3
     if(nb_meals_display.value > nb_meals.value) nb_meals_display.value = nb_meals.value
     menu.value = createArray(nb_meals_display.value)
+}
+
+/**
+ * Determine if there is more meal to display
+ * 
+ * @return bool
+ */
+function displaySeeMore()
+{
+    let nb_meals_filtered = 0
+    for(let meal of meals.value)
+    {
+        if(filterMeal(meal, meal["type"])) nb_meals_filtered++
+    }
+    if(nb_meals_display.value >= nb_meals_filtered) return false
+    return true
 }
 
 const root = {
@@ -265,11 +261,9 @@ const root = {
             selectAll,
             filterMeal,
             typeCategories,
-            noEntree,
-            noMain,
-            noDessert,
             getLink,
             seeMore,
+            displaySeeMore,
         }
     }
 }
