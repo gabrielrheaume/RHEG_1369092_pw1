@@ -18,6 +18,9 @@ Pour ma part, j'ai mis tout ce qui à attrait au frontend dans le dossier "publi
 Ensuite, j'ai divisés les fichiers par élément. Par exemple, il y a un fichier CSS "Header", pour le header  
 
 ## BackEnd
+Pour le backend, nous avons vu PHP avec SQL pour les requêtes de base de données  
+Et nous avons vu la méthode MVC, alors c'est celle que j'ai utilisée  
+Séparation des modèles, des controlleurs et des vues  
 
 ## Description du projet
 ### Page d'Accueil
