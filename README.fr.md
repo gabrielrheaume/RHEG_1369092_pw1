@@ -14,6 +14,8 @@ Ce dernier voulait :
 ## FrontEnd
 Pour la partie frontend, dans ma formation, nous avons vu HTML, CSS (SCSS) et JavaScript  
 Néanmoins nous n'avions vue aucune façon de gérer les différents fichiers  
+Pour ma part, j'ai mis tout ce qui à attrait au frontend dans le dossier "public". Il y a un dossier JS et un CSS pour les fichiers de même type  
+Ensuite, j'ai divisés les fichiers par élément. Par exemple, il y a un fichier CSS "Header", pour le header  
 
 ## BackEnd
 
