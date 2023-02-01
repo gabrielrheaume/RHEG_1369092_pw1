@@ -90,4 +90,19 @@ it was necessary to separate these from the categories (meat, salad, etc.)
 The table type of dish is connected to the dishes in "one for one". The customer mentioned that a dish should not have multiple dish types
 On the other hand, a dish can belong to several categories, so it was necessary to create a many to many table to connect these two tables
 
-The big challenge here was, at first, to make an SQL query to retrieve all the dishes and for each of its dishes, to
+The big challenge here was, at first, to make an SQL query to retrieve all the dishes and for each of its dishes, to retrieve its type of dish as well as a table containing all its categories  
+There is therefore a loop on all the dishes which adds, in each of these, an array containing the categories. This big SQL query is then returned to do the display, which was the second challenge  
+Indeed, the fact of having to display the dishes according to their type of dishes and to manage all the display conditions with JavaScript made the HTML very dense and difficult to read
+
+Thus, the menu contains all the following languages: SQL, PHP, HTML, JavaScript, CSS  
+All this with VueJS and the SPA
+
+### Admin area
+The Admin zone has been greatly discussed previously (see "Newsletter (and more)")  
+To access all these forms, it is done through the menu, when you are connected  
+In the box for filtering the menu, there are added buttons for adding a dish, categories and creating an account  
+Then, for each dish, in their respective box, there are two buttons to modify and delete the dish concerned  
+
+A feature that has not been requested and that would be greatly appreciated, would be to be able to modify and delete employee accounts
+
+These buttons leading to the forms are made in HTML/CSS with a hint of PHP to obtain information such as the id of the dishes
