@@ -101,5 +101,8 @@ Tout cela avec VueJS et le SPA
 La zone Admin a été grandement discutée précédemment (voir "Infolettre (et plus)")
 Pour accéder à tous ces formulaires, ça se fait par le menu, lorsque l'on est connecté  
 Dans l'encadré pour filtrer le menu, vient s'ajouter des boutons d'ajout de plat, de catégories et de création de compte  
-Ensuite, pour chaque plat, dans leur encadré respectif, se retrouve deux boutons pour modifier et supprimer le plat concerné  
--> supp compte
+Ensuite, pour chaque plat, dans leur encadré respectif, se retrouve deux boutons pour modifier et supprimer le plat concerné
+
+Une fonctionnalité qui n'a pas été demandée et qui serait fort apprécié, serait de pouvoir modifier et supprimer des comptes employés
+
+Ces boutons menant aux formulaires sont faits en HTML/CSS avec un soupçon de PHP pour obtenir les informations telles que les id des plats
