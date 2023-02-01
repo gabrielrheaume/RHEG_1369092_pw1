@@ -33,7 +33,8 @@ Le Header contient :
 - Les icônes des réseaux sociaux
 
 Les liens de navigation ont un petit effet lors du survol  
-Il serait intéressant d'en ajouter un pour les réseaux sociaux
+Il serait intéressant d'en ajouter un pour les réseaux sociaux  
+Le header est fait en HTML/CSS
 
 ### Footer
 Le footer contient :
@@ -42,8 +43,20 @@ Le footer contient :
 - Un texte et un bouton pour inciter l'inscription à l'infolettre
 
 La partie infolettre n'est pas présente sur la page d'inscription à l'infolettre, ni sur la page réservée au gérant et aux employés
+Le footer est fait en HTML/CSS
 
 ### Page d'Accueil
+La page d'acceuil est divisée en trois sections et une fonctionnalité :
+- Entête
+- Informations sur le style de nourriture
+- Incitation à vivre l'expérience PUBG4
+- Commentaires pop-up
+
+Les trois sections sont statiques et faites en HTML/CSS  
+Les commentaires sont tirés aléatoirement dans une liste contenue dans la base de données.  
+Ensuite, le commentaire obtenu est affiché dans une infobulle style texto  
+Les commentaires sont récupérés dans la base de données via PHP/SQL et sont envoyés en json pour être traités et affichés en JavaScript/CSS
+
 ### Page "À Propos"
 ### Page de Contact
 ### Infolettre (et plus)
