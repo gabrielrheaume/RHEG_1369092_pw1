@@ -32,7 +32,9 @@ Le Header contient :
 - Des liens de navigation
 - Les icônes des réseaux sociaux
 
-Les liens de navigastion ont un petit effet 
+Les liens de navigation ont un petit effet lors du survol  
+Il serait intéressant d'en ajouter un pour les réseaux sociaux
+
 ### Footer
 ### Page d'Accueil
 ### Page "À Propos"
