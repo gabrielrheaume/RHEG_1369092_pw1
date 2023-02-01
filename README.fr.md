@@ -36,6 +36,13 @@ Les liens de navigation ont un petit effet lors du survol
 Il serait intéressant d'en ajouter un pour les réseaux sociaux
 
 ### Footer
+Le footer contient :
+- Un logo copyright
+- Deux éléments importants : l'adresse et le numéro de téléphone
+- Un texte et un bouton pour inciter l'inscription à l'infolettre
+
+La partie infolettre n'est pas présente sur la page d'inscription à l'infolettre, ni sur la page réservée au gérant et aux employés
+
 ### Page d'Accueil
 ### Page "À Propos"
 ### Page de Contact
