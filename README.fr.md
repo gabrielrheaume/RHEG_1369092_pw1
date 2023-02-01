@@ -67,5 +67,12 @@ Il y a un élément visuel, géré en PHP, pour indiquer si le restaurant est ac
 Il serait toutefois très intéressant de permettre au propriétaire de modifier les heures d'ouverture et potentiellement des fermetures exceptionnelles
 
 ### Infolettre (et plus)
+Cette page contient un formulaire d'inscription à l'infolettre  
+Il y a aussi une petite flèche pour le retour à la page précédente et une image pour combler l'espace vide  
+Ce qui est très intéressant avec cette page, c'est que la section du formulaire sert aussi à accueillir tous les autres formulaires du site 
+En effet, la création de compte ainsi que toutes les fonctions relatives à la modification du menu s'y retrouvent, mais ne sont accessibles qu'au propriétaire ainsi qu'à ses employés. Note spéciale pour la création de compte qui n'est accessible qu'au propriétaire, comme il l'a demandé  
+
+Évidemment, l'affichage est fait en HTML/CSS, mais toute la gestion des formulaires est faites en PHP/SQL
+
 ### Menu dynamique
 ### Zone Admin
