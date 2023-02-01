@@ -58,7 +58,14 @@ Ensuite, le commentaire obtenu est affiché dans une infobulle style texto
 Les commentaires sont récupérés dans la base de données via PHP/SQL et sont envoyés en json pour être traités et affichés en JavaScript/CSS
 
 ### Page "À Propos"
+Cette page contient une image et un texte descriptif du restaurant et/ou de l'entreprise  
+Ce n'est que du HTML/CSS
+
 ### Page de Contact
+Tout comme la page "À propos", cette page est en très grande majorité du HTML/CSS statique  
+Il y a un élément visuel, géré en PHP, pour indiquer si le restaurant est actuellement ouvert ou fermé  
+Il serait toutefois très intéressant de permettre au propriétaire de modifier les heures d'ouverture et potentiellement des fermetures exceptionnelles
+
 ### Infolettre (et plus)
 ### Menu dynamique
 ### Zone Admin
