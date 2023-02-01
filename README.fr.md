@@ -73,7 +73,26 @@ Il y a aussi une petite flèche pour le retour à la page précédente et une im
 Ce qui est très intéressant avec cette page, c'est que la section du formulaire sert aussi à accueillir tous les autres formulaires du site 
 En effet, la création de compte ainsi que toutes les fonctions relatives à la modification du menu s'y retrouvent, mais ne sont accessibles qu'au propriétaire ainsi qu'à ses employés. Note spéciale pour la création de compte qui n'est accessible qu'au propriétaire, comme il l'a demandé  
 
-Évidemment, l'affichage est fait en HTML/CSS, mais toute la gestion des formulaires est faites en PHP/SQL
+Évidemment, l'affichage est fait en HTML/CSS, mais toute la gestion des formulaires est faite en PHP/SQL
 
 ### Menu dynamique
+Cette page a été la plus compliquée à faire  
+Le menu est stockée dans une base de données et récupéré via PHP/SQL  
+Il est encodé en JSON pour pouvoir être traité en JavaScript en utilisant VueJS en SPA (Single Page Application)  
+Ce dernier permet de choisir différents critères pour trier la recherche dans le menu  
+
+Voici la structure de la base de données :  
+Il y a les tables "plats", "catégories" et "type de plat"  
+Puisque les plats devaient être catégorisés par leur type de plat (entrée, repas, dessert),   
+il a été nécessaire de séparer ceux-ci des catégories (viande, salade, etc)  
+La table type de plat est relié aux plats en "un pour un". Le client a mentionné qu'un plat ne devrait pas avoir plusieurs types de plat  
+Par contre, un plat peut appartenir à plusieurs catégories, il a donc été nécessaire de créer une table pivot pour relier ces deux tables  
+
+Le gros défi ici, a été, dans un premier temps, de faire une requête SQL pour récupérer tous les plats et pour chacun de ses plats, de récupérer son type de plat ainsi qu'un tableau contenant toutes ses catégories  
+Il y a donc une boucle sur tous les plats qui ajoute, dans chacun de ceux-ci, un tableau contenant les catégories. Cette grosse requête SQL est ensuite retournée pour faire l'affichage, qui a été le deuxième défi  
+En effet, le fait de devoir afficher les plats en fonction de leur type de plats et de gérer toutes les conditions d'affichage avec JavaScript a rendu le HTML très fourni et difficile à suivre  
+
+Ainsi, le menu contient tous les langages suivants : SQL, PHP, HTML, JavaScript, CSS  
+Tout cela avec VueJS et le SPA
+
 ### Zone Admin
