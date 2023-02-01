@@ -73,6 +73,8 @@ Il y a aussi une petite flèche pour le retour à la page précédente et une im
 Ce qui est très intéressant avec cette page, c'est que la section du formulaire sert aussi à accueillir tous les autres formulaires du site 
 En effet, la création de compte ainsi que toutes les fonctions relatives à la modification du menu s'y retrouvent, mais ne sont accessibles qu'au propriétaire ainsi qu'à ses employés. Note spéciale pour la création de compte qui n'est accessible qu'au propriétaire, comme il l'a demandé  
 
+Pour voir un autre exemple de formulaire, la page de connexion est l'URL avec "/connexion"
+
 Évidemment, l'affichage est fait en HTML/CSS, mais toute la gestion des formulaires est faite en PHP/SQL
 
 ### Menu dynamique
@@ -96,3 +98,8 @@ Ainsi, le menu contient tous les langages suivants : SQL, PHP, HTML, JavaScript,
 Tout cela avec VueJS et le SPA
 
 ### Zone Admin
+La zone Admin a été grandement discutée précédemment (voir "Infolettre (et plus)")
+Pour accéder à tous ces formulaires, ça se fait par le menu, lorsque l'on est connecté  
+Dans l'encadré pour filtrer le menu, vient s'ajouter des boutons d'ajout de plat, de catégories et de création de compte  
+Ensuite, pour chaque plat, dans leur encadré respectif, se retrouve deux boutons pour modifier et supprimer le plat concerné  
+-> supp compte
